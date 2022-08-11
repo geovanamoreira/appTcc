@@ -35,6 +35,10 @@
 
 #titulo{
   text-align: center;
+  font-family: 'Figtree', sans-serif;
+  font-size: 30PX;
+  color: #c6c8d1;
+
 }
 
 .conteudo{
@@ -59,4 +63,15 @@
 
 .borda{
   border-left: 3px solid #577de7;
+}
+
+.borda2{
+  border-left: 3px solid #fa5050;
+}
+
+ion-content{
+  --background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0 , 0.1)),
+    url("/assets/logo-borrada.png") no-repeat center center / cover;
+
+
 }

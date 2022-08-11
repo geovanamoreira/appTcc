@@ -1,12 +1,33 @@
-<ion-header>
-  <ion-toolbar>
+<ion-menu side="start" content-id="main-content">
+  <ion-header>
+    <ion-toolbar translucent>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-item>
+        <ion-icon name="mail" slot="start"></ion-icon>
+        <ion-label [routerLink]="['../login-empregado']" routerLinkActive="router-link-active">Conta</ion-label>
+      </ion-item>
 
-    <ion-title>pagina inicial</ion-title>
-  </ion-toolbar>
-</ion-header>
+    </ion-list>
+  </ion-content>
+</ion-menu>
 
-<ion-content>
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+
+      <ion-title class="alinha"></ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
 
 
 
-</ion-content>
+  </ion-content>
+</div>

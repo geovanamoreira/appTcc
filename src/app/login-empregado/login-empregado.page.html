@@ -9,6 +9,8 @@
 
 <ion-content>
 
+
+
   <form [formGroup]="formLogin1">
 
     <ion-item>
@@ -27,7 +29,11 @@
     </ion-item>
 
 
-    <ion-button expand="block" (click)="salvarLogin()">Entrar</ion-button>
+    <ion-button expand="block" (click)="salvarLogin()" class="botao-entrar">Entrar</ion-button>
+    <br>
+
+    <ion-button expand="block">Cadastre-se</ion-button>
+
 
 
   </form>
