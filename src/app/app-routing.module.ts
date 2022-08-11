@@ -18,6 +18,10 @@ const routes: Routes = [
     path: 'login-empregadorrr',
     loadChildren: () => import('./login-empregadorrr/login-empregadorrr.module').then( m => m.LoginEmpregadorrrPageModule)
   },
+  {
+    path: 'pagina-inicial',
+    loadChildren: () => import('./pagina-inicial/pagina-inicial.module').then( m => m.PaginaInicialPageModule)
+  },
 
 ];
 

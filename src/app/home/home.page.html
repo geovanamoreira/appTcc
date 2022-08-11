@@ -15,11 +15,11 @@
       <ion-col>
 
 
-        <ion-card>
+        <ion-card class="card borda">
 
           <ion-card-content [routerLink]="['../login-empregado']" routerLinkActive="router-link-active">
-            <img src="../assets/pessoa.jpg" alt="">
-            <p>Empregado</p>
+            <img src="../assets/empregado.png" alt="">
+            <p class="titulo-card">Empregador</p>
           </ion-card-content>
         </ion-card>
 
@@ -28,11 +28,11 @@
       <ion-col>
 
 
-        <ion-card>
+        <ion-card class="card borda2">
 
           <ion-card-content  [routerLink]="['../login-empregadorrr']" routerLinkActive="router-link-active">
-            <img src="../assets/pessoa.jpg" alt="">
-            <p>Empregador</p>
+            <img src="../assets/empregador.png" alt="">
+            <p class="titulo-card">Empregado</p>
           </ion-card-content>
         </ion-card>
 
@@ -40,6 +40,8 @@
       </ion-col>
     </ion-row>
   </ion-grid>
+
+  <ion-button [routerLink]="['../pagina-inicial']" routerLinkActive="router-link-active">Default</ion-button>
 
 </ion-content>
 

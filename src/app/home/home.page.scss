@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree&display=swap');
+
 #container {
   text-align: center;
 
@@ -37,4 +39,24 @@
 
 .conteudo{
   max-height: fit-content;
+}
+
+.titulo-card{
+  font-family: 'Figtree', sans-serif;
+  text-align: center;
+  font-size: 20PX;
+}
+
+.card{
+  box-shadow: 7px 7px 13px 0 rgba9(50, 50, 50, 0.22);
+  transition: all 0.3s ease-out;
+}
+
+.card:hover{
+  transform: translateY(-5px);
+  cursor: pointer;
+}
+
+.borda{
+  border-left: 3px solid #577de7;
 }
