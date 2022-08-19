@@ -32,6 +32,8 @@ ion-content{
       font-size: 1rem;
       color: #7b7b7b;
     }
+  }
+
     .formulario-login{
       .form-input{
         position: relative;
@@ -42,12 +44,47 @@ ion-content{
 
         ion-icon{
           position: absolute;
-          top: 37px;
+          top: 18px;
           z-index: 2;
           font-size: 1.2rem;
           left: 5px;
         }
+        ion-label{
+          position: absolute;
+          margin-left: 25px;
+          font-weight: bolder;
+          font-size: 15px;
+          top: 4px;
+        }
+
+        ion-input{
+          font-size: 0.3rem;
+          --padding-start: 36px;
+          --padding-top: 36px;
+          color: #7b7b7b;
+        }
+
+      }
+    }
+    .ion-button{
+      text-align: center;
+      .botao-login{
+        --background: #3a346d;
+        width: 100%;
+        font-weight: bold;
+      }
+      p{
+        margin-top: 15px;
+        font-size: 1rem;
+        color: #7b7b7b;
+      }
+      .botao-cadastro{
+        --border-color: #b4b4b4;
+        --color: #000000;
+        font-weight: bold;
+        margin-top: 3px;
+        width: 100%;
       }
     }
   }
-}
+
