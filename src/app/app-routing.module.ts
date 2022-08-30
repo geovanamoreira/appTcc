@@ -26,6 +26,14 @@ const routes: Routes = [
     path: 'inicio',
     loadChildren: () => import('./inicio/inicio.module').then( m => m.InicioPageModule)
   },
+  {
+    path: 'cadastro-empregado',
+    loadChildren: () => import('./cadastro-empregado/cadastro-empregado.module').then( m => m.CadastroEmpregadoPageModule)
+  },
+  {
+    path: 'cadastro-empregadorrr',
+    loadChildren: () => import('./cadastro-empregadorrr/cadastro-empregadorrr.module').then( m => m.CadastroEmpregadorrrPageModule)
+  },
 
 ];
 

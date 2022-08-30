@@ -11,11 +11,16 @@
   </div>
 
   <div class="botao">
-    <ion-button size="large" class="botao-cadastro" fill="outline" routerLink="" slot="end" >Continuar
+    <ion-button size="large" class="botao-empregado" fill="outline" [routerLink]="['../inicio']" routerLinkActive="router-link-active" slot="end">Acesso empregados
+      <ion-icon name="arrow-forward-outline"></ion-icon>
+    </ion-button>
+
+    <ion-button size="large" class="botao-empregador" fill="outline" [routerLink]="['../inicio']" routerLinkActive="router-link-active" slot="end">Acesso empregadores
       <ion-icon name="arrow-forward-outline"></ion-icon>
     </ion-button>
   </div>
 </div>
+
 
 
 
