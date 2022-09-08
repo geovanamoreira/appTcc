@@ -34,6 +34,14 @@ const routes: Routes = [
     path: 'cadastro-empregadorrr',
     loadChildren: () => import('./cadastro-empregadorrr/cadastro-empregadorrr.module').then( m => m.CadastroEmpregadorrrPageModule)
   },
+  {
+    path: 'perfil-empregado',
+    loadChildren: () => import('./perfil-empregado/perfil-empregado.module').then( m => m.PerfilEmpregadoPageModule)
+  },
+  {
+    path: 'perfil-empregador',
+    loadChildren: () => import('./perfil-empregador/perfil-empregador.module').then( m => m.PerfilEmpregadorPageModule)
+  },
 
 ];
 

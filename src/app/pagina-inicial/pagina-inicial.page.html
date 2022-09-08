@@ -6,10 +6,40 @@
   </ion-header>
   <ion-content>
     <ion-list>
+
+      <ion-item>
+        <ion-thumbnail slot="start">
+          <img alt="Silhouette of mountains" src="https://play-lh.googleusercontent.com/zbqruZrdVULsGpzYAun1Wud8Yw_1wrJlTCzgmGmI3pJFXCRrt4jKjMzBP6mGmU1UJkme" />
+        </ion-thumbnail>
+        <ion-label>Bem vinda(o), Geovana!</ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="person" slot="start"></ion-icon>
+        <ion-label [routerLink]="['../perfil-empregado']" routerLinkActive="router-link-active">Perfil</ion-label>
+      </ion-item>
+
       <ion-item>
         <ion-icon name="mail" slot="start"></ion-icon>
-        <ion-label [routerLink]="['../login-empregado']" routerLinkActive="router-link-active">Conta</ion-label>
+        <ion-label [routerLink]="['../login-empregado']" routerLinkActive="router-link-active">Mensagens</ion-label>
       </ion-item>
+
+      <ion-item>
+        <ion-icon name="people" slot="start"></ion-icon>
+        <ion-label [routerLink]="['../login-empregado']" routerLinkActive="router-link-active">Equipe</ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="document-attach" slot="start"></ion-icon>
+        <ion-label [routerLink]="['../login-empregado']" routerLinkActive="router-link-active">Vagas</ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="exit" slot="start"></ion-icon>
+        <ion-label [routerLink]="['../login-empregado']" routerLinkActive="router-link-active">Sair</ion-label>
+      </ion-item>
+
+
 
     </ion-list>
   </ion-content>
