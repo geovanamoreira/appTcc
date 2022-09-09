@@ -10,17 +10,14 @@ const routes: Routes = [
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
-  },  {
+  },
+  {
     path: 'login-empregado',
     loadChildren: () => import('./login-empregado/login-empregado.module').then( m => m.LoginEmpregadoPageModule)
   },
   {
     path: 'login-empregadorrr',
     loadChildren: () => import('./login-empregadorrr/login-empregadorrr.module').then( m => m.LoginEmpregadorrrPageModule)
-  },
-  {
-    path: 'pagina-inicial',
-    loadChildren: () => import('./pagina-inicial/pagina-inicial.module').then( m => m.PaginaInicialPageModule)
   },
   {
     path: 'inicio',
@@ -41,6 +38,14 @@ const routes: Routes = [
   {
     path: 'perfil-empregador',
     loadChildren: () => import('./perfil-empregador/perfil-empregador.module').then( m => m.PerfilEmpregadorPageModule)
+  },
+  {
+    path: 'interface-empregado',
+    loadChildren: () => import('./interface-empregado/interface-empregado.module').then( m => m.InterfaceEmpregadoPageModule)
+  },
+  {
+    path: 'interface-empregador',
+    loadChildren: () => import('./interface-empregador/interface-empregador.module').then( m => m.InterfaceEmpregadorPageModule)
   },
 
 ];
