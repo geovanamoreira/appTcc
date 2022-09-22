@@ -57,6 +57,75 @@
   </ion-header>
   <ion-content>
 
+    <ion-slides>
+      <ion-slide>
+        <div class="slide">
+          <img src="./slide-1.png" />
+          <h2>Welcome</h2>
+          <p>
+            The <b>ionic conference app</b> is a practical preview of the ionic framework in action, and a
+            demonstration of proper code use.
+          </p>
+        </div>
+      </ion-slide>
+
+      <ion-slide>
+        <img src="./slide-2.png" />
+        <h2>What is Ionic?</h2>
+        <p>
+          <b>Ionic Framework</b> is an open source SDK that enables developers to build high quality mobile apps
+          with web technologies like HTML, CSS, and JavaScript.
+        </p>
+      </ion-slide>
+
+      <ion-slide>
+        <img src="./slide-3.png" />
+        <h2>What is Appflow?</h2>
+        <p>
+          <b>Appflow</b> is a powerful set of services and features built on top of Ionic Framework that brings a
+          totally new level of app development agility to mobile dev teams.
+        </p>
+      </ion-slide>
+
+      <ion-slide>
+        <img src="./slide-4.png" />
+        <h2>Ready to Play?</h2>
+        <ion-button fill="clear">Continue <ion-icon slot="end" name="arrow-forward"></ion-icon></ion-button>
+      </ion-slide>
+    </ion-slides>
+
+
+    <div class="container">
+      <ion-button id="top-center">Side=Top, Alignment=Center</ion-button>
+      <ion-popover trigger="top-center" side="top" alignment="center">
+        <ng-template>
+          <ion-content class="ion-padding">ha</ion-content>
+        </ng-template>
+      </ion-popover>
+
+      <ion-button id="bottom-start">Side=Bottom, Alignment=Start</ion-button>
+      <ion-popover trigger="bottom-start" side="bottom" alignment="start">
+        <ng-template>
+          <ion-content class="ion-padding">He</ion-content>
+        </ng-template>
+      </ion-popover>
+
+      <ion-button id="left-start">Side=Left, Alignment=Start</ion-button>
+      <ion-popover trigger="left-start" side="left" alignment="start">
+        <ng-template>
+          <ion-content class="ion-padding">hihi</ion-content>
+        </ng-template>
+      </ion-popover>
+
+      <ion-button id="right-end">Side=Right, Alignment=End</ion-button>
+      <ion-popover trigger="right-end" side="right" alignment="end">
+        <ng-template>
+          <ion-content class="ion-padding">Hello World!</ion-content>
+        </ng-template>
+      </ion-popover>
+    </div>
+
+
 
 
   </ion-content>
