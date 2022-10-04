@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Figtree&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
 .conteudo{
   max-height: fit-content;
 }
@@ -14,8 +16,18 @@ ion-content{
   text-align: center;
   margin-top: 20rem;
   position: fixed;
-  --background: #3a346d;
   width: 100%;
   font-weight: bold;
 }
 
+.titulo{
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  color: #d6e2e2;
+  font-size: 70px;
+  text-shadow: 2px 2px #858181;
+}
+
+.categoria{
+  color: aqua;
+}

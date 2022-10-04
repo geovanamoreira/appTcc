@@ -60,7 +60,7 @@
     <ion-slides>
       <ion-slide>
         <div class="slide">
-          <img src="./slide-1.png" />
+          <img src="../assets/ateez.jfif" />
           <h2>Welcome</h2>
           <p>
             The <b>ionic conference app</b> is a practical preview of the ionic framework in action, and a
@@ -70,7 +70,7 @@
       </ion-slide>
 
       <ion-slide>
-        <img src="./slide-2.png" />
+        <img src="../assets/ateez.jfif" />
         <h2>What is Ionic?</h2>
         <p>
           <b>Ionic Framework</b> is an open source SDK that enables developers to build high quality mobile apps
@@ -95,35 +95,59 @@
     </ion-slides>
 
 
-    <div class="container">
-      <ion-button id="top-center">Side=Top, Alignment=Center</ion-button>
-      <ion-popover trigger="top-center" side="top" alignment="center">
-        <ng-template>
-          <ion-content class="ion-padding">ha</ion-content>
-        </ng-template>
-      </ion-popover>
 
-      <ion-button id="bottom-start">Side=Bottom, Alignment=Start</ion-button>
-      <ion-popover trigger="bottom-start" side="bottom" alignment="start">
-        <ng-template>
-          <ion-content class="ion-padding">He</ion-content>
-        </ng-template>
-      </ion-popover>
 
-      <ion-button id="left-start">Side=Left, Alignment=Start</ion-button>
-      <ion-popover trigger="left-start" side="left" alignment="start">
-        <ng-template>
-          <ion-content class="ion-padding">hihi</ion-content>
-        </ng-template>
-      </ion-popover>
+      <ion-list>
+        <ion-item>
+          <ion-select interface="popover" placeholder="Estoque" class="categoria">
+            <ion-select-option value="apples">Apples</ion-select-option>
+            <ion-select-option value="oranges">Oranges</ion-select-option>
+            <ion-select-option value="bananas">Bananas</ion-select-option>
+          </ion-select>
+        </ion-item>
 
-      <ion-button id="right-end">Side=Right, Alignment=End</ion-button>
-      <ion-popover trigger="right-end" side="right" alignment="end">
-        <ng-template>
-          <ion-content class="ion-padding">Hello World!</ion-content>
-        </ng-template>
-      </ion-popover>
-    </div>
+        <ion-item>
+          <ion-select interface="popover" placeholder="Garçom">
+            <ion-select-option value="apples">Apples</ion-select-option>
+            <ion-select-option value="oranges">Oranges</ion-select-option>
+            <ion-select-option value="bananas">Bananas</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-select interface="popover" placeholder="Culinária">
+            <ion-select-option value="apples">Apples</ion-select-option>
+            <ion-select-option value="oranges">Oranges</ion-select-option>
+            <ion-select-option value="bananas">Bananas</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-select interface="popover" placeholder="Empacotador">
+            <ion-select-option value="apples">Apples</ion-select-option>
+            <ion-select-option value="oranges">Oranges</ion-select-option>
+            <ion-select-option value="bananas">Bananas</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-select interface="popover" placeholder="Organizador">
+            <ion-select-option value="apples">Apples</ion-select-option>
+            <ion-select-option value="oranges">Oranges</ion-select-option>
+            <ion-select-option value="bananas">Bananas</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-select interface="popover" placeholder="Datas Especiais">
+            <ion-select-option value="apples">Apples</ion-select-option>
+            <ion-select-option value="oranges">Oranges</ion-select-option>
+            <ion-select-option value="bananas">Bananas</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+      </ion-list>
+
 
 
 
