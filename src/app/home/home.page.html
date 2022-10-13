@@ -4,22 +4,24 @@
 
 <ion-content class="conteudo">
 <div>
-  <div class="titulo">
-    <h1>
+  <div>
+    <h1 class="titulo">
       freemate
     </h1>
   </div>
 
-  <div class="botao">
-    <ion-button size="large" class="botao-empregado" fill="outline" [routerLink]="['../inicio']" routerLinkActive="router-link-active" slot="end">Acesso empregados
+  <div>
+    <h2>
+      Acessar:
+    </h2>
+  </div>
+
+  <div class="div-botao">
+    <ion-button size="large" class="botao-empregado" fill="solid" [routerLink]="['../login-empregado']" routerLinkActive="router-link-active">Empregados
       <ion-icon name="arrow-forward-outline"></ion-icon>
     </ion-button>
 
-    <ion-button size="large" class="botao-empregador" fill="outline" [routerLink]="['../inicio']" routerLinkActive="router-link-active" slot="end">Acesso empregadores
-      <ion-icon name="arrow-forward-outline"></ion-icon>
-    </ion-button>
-
-    <ion-button size="large" class="botao-empregador" fill="outline" [routerLink]="['../interface-empregado']" routerLinkActive="router-link-active" slot="end">Acesso empregadores
+    <ion-button size="large" class="botao-empregador" fill="solid" [routerLink]="['../login-empregadorrr']" routerLinkActive="router-link-active" slot="end">Empregadores
       <ion-icon name="arrow-forward-outline"></ion-icon>
     </ion-button>
   </div>

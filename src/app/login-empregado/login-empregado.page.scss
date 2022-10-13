@@ -1,3 +1,101 @@
-.botao-entrar{
+@import url('https://fonts.googleapis.com/css2?family=Figtree&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
+.conteudo{
+  max-height: fit-content;
 }
+ion-content{
+  --background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0 , 0.1)),
+    url("/assets/logo-borrada.png") no-repeat center center / cover;
+    font-family: 'Poppins', sans-serif;
+}
+
+.sessao-login{
+  height: 74vh;
+  width: 100%;
+  max-width: 500px;
+  background: #fff;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  position: fixed;
+  margin: auto;
+  border-top-left-radius: 46px;
+  border-top-right-radius: 46px;
+
+  .heading{
+    margin-top: 20px;
+    h1{
+      font-size: 1.6rem;
+      font-weight: bolder;
+    }
+    p{
+      margin-top: 20px;
+      font-size: 1rem;
+      color: #7b7b7b;
+    }
+  }
+
+    .formulario-login{
+      .form-input{
+        position: relative;
+        margin-bottom: 10px;
+        ion-item:part(native) {
+          padding-left: 0;
+        }
+
+        ion-icon{
+          position: absolute;
+          top: 18px;
+          z-index: 2;
+          font-size: 1.2rem;
+          left: 5px;
+        }
+        ion-label{
+          position: absolute;
+          margin-left: 25px;
+          font-weight: bolder;
+          font-size: 15px;
+          top: 4px;
+        }
+
+        ion-input{
+          font-size: 0.3rem;
+          --padding-start: 36px;
+          --padding-top: 36px;
+          color: #7b7b7b;
+        }
+
+      }
+    }
+    .ion-button{
+      text-align: center;
+      .botao-login{
+        --background: #3a346d;
+        width: 100%;
+        font-weight: bold;
+      }
+      p{
+        margin-top: 15px;
+        font-size: 1rem;
+        color: #7b7b7b;
+      }
+      .botao-cadastro{
+        --border-color: #b4b4b4;
+        --color: #000000;
+        font-weight: bold;
+        margin-top: 3px;
+        width: 100%;
+      }
+    }
+  }
+.batatao{
+  text-align: center;
+  font-size: 25px;
+  margin-top: 7px;
+  margin-bottom: 8px;
+  font-weight: bolder;
+  font-family: 'Poppins', sans-serif;
+}
+
+

@@ -1,41 +1,43 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button text="" icon="arrow-back-outline"></ion-back-button>
-    </ion-buttons>
-    <ion-title>login-empregado</ion-title>
-  </ion-toolbar>
+<ion-header >
+
 </ion-header>
 
-<ion-content>
+<ion-content class="conteudo">
+  <div class="sessao-login ion-padding">
+
+    <div class="heading">
+      <h1>Seja bem vindo!</h1>
+      <p>Conecte-se para continuar</p>
+    </div>
+
+    <div class="formulario-login ion-padding">
+
+      <div class="form-input">
+        <ion-icon name="mail-outline"></ion-icon>
+        <ion-item>
+          <ion-label position="floating">E-Mail</ion-label>
+          <ion-input type="email"></ion-input>
+        </ion-item>
+      </div>
+
+      <div class="form-input">
+        <ion-icon name="lock-closed-outline"></ion-icon>
+        <ion-item>
+          <ion-label position="floating">Senha</ion-label>
+          <ion-input type="password"></ion-input>
+        </ion-item>
+      </div>
+    </div>
+
+    <div class="ion-button ion-padding">
+      <ion-button size="large" class="botao-login" [routerLink]="['../interface-empregado']" routerLinkActive="router-link-active">Entrar</ion-button>
+      <p>Esqueceu sua senha?</p>
+      <ion-button size="large" class="botao-cadastro" fill="outline" routerLink="">Cadastre-se</ion-button>
+    </div>
 
 
-
-  <form [formGroup]="formLogin1">
-
-    <ion-item>
-      <ion-label position="floating">E-Mail</ion-label>
-      <ion-input formControlName="email"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label position="floating">Senha</ion-label>
-      <ion-input type="password" formControlName="senha"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label position="floating">Confirmar Senha</ion-label>
-      <ion-input type="password" formControlName="confirmaSenha"></ion-input>
-    </ion-item>
+  </div>
 
 
-    <ion-button expand="block" (click)="salvarLogin()" class="botao-entrar">Entrar</ion-button>
-    <br>
-
-    <ion-button expand="block">Cadastre-se</ion-button>
-
-
-
-  </form>
 
 </ion-content>
