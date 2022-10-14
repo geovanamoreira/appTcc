@@ -46,7 +46,23 @@ const routes: Routes = [
   {
     path: 'interface-empregador',
     loadChildren: () => import('./interface-empregador/interface-empregador.module').then( m => m.InterfaceEmpregadorPageModule)
+  },  {
+    path: 'empregado-vagas',
+    loadChildren: () => import('./empregado-vagas/empregado-vagas.module').then( m => m.EmpregadoVagasPageModule)
   },
+  {
+    path: 'empregado-equipe',
+    loadChildren: () => import('./empregado-equipe/empregado-equipe.module').then( m => m.EmpregadoEquipePageModule)
+  },
+  {
+    path: 'empregado-mensagens',
+    loadChildren: () => import('./empregado-mensagens/empregado-mensagens.module').then( m => m.EmpregadoMensagensPageModule)
+  },
+  {
+    path: 'empregado-cadastro',
+    loadChildren: () => import('./empregado-cadastro/empregado-cadastro.module').then( m => m.EmpregadoCadastroPageModule)
+  },
+
 
 ];
 
