@@ -2,14 +2,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 .capa{
-  background-color: #d0a1fc;
   height: 200px;
   font-family: Arial, Helvetica, sans-serif;
   text-align-last: center;
 }
 .foto{
   width: 80px;
-  margin-left: 135px;
+  margin-left: 115px;
 
 }
 .foto img{
@@ -22,20 +21,35 @@ h1{
   font-size: 20px;
   font-family: 'Poppins', sans-serif;
 }
+h2{
+  text-align: center;
+}
 
 
 .card{
-  background-color: 	#B0E0E6;
+  background-color: 	#b0d9e6;
   padding: 20px;
   border-radius: 10px;
-  margin: 20px;
+  margin: 3px;
+  float: center;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+
+
+
+ion-toolbar{
+  --background: #b6b6e0ea;
+}
+
+.card-total{
+  background-color: 	#b3b4db;
+  padding: 15px;
+  border-radius: 5px;
+  margin: 15px;
   float: center;
   font-family: Arial, Helvetica, sans-serif;
   text-decoration: none;
 }
-.tamanho-40{
-  width: 60%;
-}
-.tamanho-55{
-  width: 55%;
-}
+

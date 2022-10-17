@@ -1,0 +1,41 @@
+.card{
+  background-color: 	#abacdd;
+  padding: 15px;
+  border-radius: 5px;
+  margin: 15px;
+  float: center;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+}
+
+.msg-erro{
+  color: #c22b2b;
+  font-size: 13px;
+  clear: both;
+  position: relative;
+  margin: 5px;
+}
+
+ion-item{
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+ion-button{
+  text-align: center;
+  --background: #3a346d;
+  width: 100%;
+  font-weight: bold;
+}
+
+h1{
+  font-size: 33px;
+  margin-bottom: 30px;
+}
+
+ion-label{
+  font-weight: bolder;
+  font-size: 20px;
+}
+
+
