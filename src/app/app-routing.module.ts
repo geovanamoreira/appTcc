@@ -46,7 +46,8 @@ const routes: Routes = [
   {
     path: 'interface-empregador',
     loadChildren: () => import('./interface-empregador/interface-empregador.module').then( m => m.InterfaceEmpregadorPageModule)
-  },  {
+  },
+  {
     path: 'empregado-vagas',
     loadChildren: () => import('./empregado-vagas/empregado-vagas.module').then( m => m.EmpregadoVagasPageModule)
   },
@@ -59,8 +60,20 @@ const routes: Routes = [
     loadChildren: () => import('./empregado-mensagens/empregado-mensagens.module').then( m => m.EmpregadoMensagensPageModule)
   },
   {
-    path: 'empregado-cadastro',
-    loadChildren: () => import('./empregado-cadastro/empregado-cadastro.module').then( m => m.EmpregadoCadastroPageModule)
+    path: 'empresa',
+    loadChildren: () => import('./empresa/empresa.module').then( m => m.EmpresaPageModule)
+  },
+  {
+    path: 'empregador-mensagens',
+    loadChildren: () => import('./empregador-mensagens/empregador-mensagens.module').then( m => m.EmpregadorMensagensPageModule)
+  },
+  {
+    path: 'empregador-vagas',
+    loadChildren: () => import('./empregador-vagas/empregador-vagas.module').then( m => m.EmpregadorVagasPageModule)
+  },
+  {
+    path: 'equipe',
+    loadChildren: () => import('./equipe/equipe.module').then( m => m.EquipePageModule)
   },
 
 
