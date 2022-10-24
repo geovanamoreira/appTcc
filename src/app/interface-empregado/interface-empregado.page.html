@@ -9,7 +9,7 @@
 
       <ion-item>
         <ion-thumbnail slot="start">
-          <img alt="Silhouette of mountains"   class="foto-perfil" src="https://play-lh.googleusercontent.com/zbqruZrdVULsGpzYAun1Wud8Yw_1wrJlTCzgmGmI3pJFXCRrt4jKjMzBP6mGmU1UJkme" />
+          <img alt="Silhouette of mountains"   class="foto-perfil" src="../assets/empregado.png" />
         </ion-thumbnail>
         <ion-label>Bem vinda(o), Geovana!</ion-label>
       </ion-item>
@@ -21,17 +21,17 @@
 
       <ion-item>
         <ion-icon name="mail" slot="start"></ion-icon>
-        <ion-label [routerLink]="['../login-empregado']" routerLinkActive="router-link-active">Mensagens</ion-label>
+        <ion-label [routerLink]="['../empregado-mensagens']" routerLinkActive="router-link-active">Mensagens</ion-label>
       </ion-item>
 
       <ion-item>
         <ion-icon name="people" slot="start"></ion-icon>
-        <ion-label [routerLink]="['../login-empregado']" routerLinkActive="router-link-active">Equipe</ion-label>
+        <ion-label [routerLink]="['../equipe']" routerLinkActive="router-link-active">Equipe</ion-label>
       </ion-item>
 
       <ion-item>
         <ion-icon name="document-attach" slot="start"></ion-icon>
-        <ion-label [routerLink]="['../login-empregado']" routerLinkActive="router-link-active">Vagas</ion-label>
+        <ion-label [routerLink]="['../empregado-vagas']" routerLinkActive="router-link-active">Vagas</ion-label>
       </ion-item>
 
       <ion-item>
@@ -57,100 +57,58 @@
   </ion-header>
   <ion-content>
 
-    <ion-slides>
-      <ion-slide>
-        <div class="slide">
-          <img src="../assets/roxo.jpg" />
-          <h2>Welcome</h2>
-          <p>
-            The <b>ionic conference app</b> is a practical preview of the ionic framework in action, and a
-            demonstration of proper code use.
-          </p>
+
+
+    <div class="tempo">
+      <h2>Bem-vindo!</h2>
+
+      <div class="row">
+        <img src="../assets/clear-sky.png" alt="" class="clima">
+
+
+      </div>
+      <h3>27C°</h3>
+
+
+
+    </div>
+
+
+    <div class="card">
+      <h2>Cozinheiro</h2>
+      <hr size="10" width="100%" align="center" noshade>
+         <div class="dadostabela">
+          <p> <b>Local:</b>  CIA da esfiha, RUA xxxxxxx N:58</p>
+          <p> <b>Descrição:</b> Vaga de cozinheiro para o dia 22/08/2022</p>
+          <p> <b>Horário:</b> 19:00</p>
+          <p> <b>Pagamento:</b> 60,00</p>
+          <p> <b>Quantidade de vagas:</b> 2</p>
+          <hr size="10" width="100%" align="center" noshade>
+         </div>
+         <div class="ion-button ion-padding">
+          <ion-button size="large" class="aceitar-botao">Aceitar</ion-button>
+          <ion-button size="large" class="recusar-botao">Recusar</ion-button>
         </div>
-      </ion-slide>
 
-      <ion-slide>
-        <img src="../assets/roxo.jpg" />
-        <h2>What is Ionic?</h2>
-        <p>
-          <b>Ionic Framework</b> is an open source SDK that enables developers to build high quality mobile apps
-          with web technologies like HTML, CSS, and JavaScript.
-        </p>
-      </ion-slide>
+    </div>
 
-      <ion-slide>
-        <img src="../assets/roxo.jpg" />
-        <h2>What is Appflow?</h2>
-        <p>
-          <b>Appflow</b> is a powerful set of services and features built on top of Ionic Framework that brings a
-          totally new level of app development agility to mobile dev teams.
-        </p>
-      </ion-slide>
+    <div class="card">
+      <h2>Motoboy</h2>
+      <hr size="10" width="100%" align="center" noshade>
+         <div class="dadostabela">
+          <p> <b>Local:</b>  LALA lanches, RUA xxxxxxx N:98</p>
+          <p> <b>Descrição:</b> Vaga de cozinheiro para o dia 22/08/2022</p>
+          <p> <b>Horário:</b> 17:00</p>
+          <p> <b>Pagamento:</b> 80,00</p>
+          <p> <b>Quantidade de vagas:</b> 1</p>
+          <hr size="10" width="100%" align="center" noshade>
+         </div>
+         <div class="ion-button ion-padding">
+          <ion-button size="large" class="aceitar-botao">Aceitar</ion-button>
+          <ion-button size="large" class="recusar-botao">Recusar</ion-button>
+        </div>
 
-      <ion-slide>
-        <img src="../assets/roxo.jpg" />
-        <h2>Ready to Play?</h2>
-        <ion-button fill="clear">Continue <ion-icon slot="end" name="arrow-forward"></ion-icon></ion-button>
-      </ion-slide>
-    </ion-slides>
-
-
-
-
-      <ion-list>
-        <ion-item>
-          <ion-select interface="popover" placeholder="Estoque" class="categoria">
-            <ion-select-option value="apples">Apples</ion-select-option>
-            <ion-select-option value="oranges">Oranges</ion-select-option>
-            <ion-select-option value="bananas">Bananas</ion-select-option>
-          </ion-select>
-        </ion-item>
-
-        <ion-item>
-          <ion-select interface="popover" placeholder="Garçom">
-            <ion-select-option value="apples">Apples</ion-select-option>
-            <ion-select-option value="oranges">Oranges</ion-select-option>
-            <ion-select-option value="bananas">Bananas</ion-select-option>
-          </ion-select>
-        </ion-item>
-
-        <ion-item>
-          <ion-select interface="popover" placeholder="Culinária">
-            <ion-select-option value="apples">Apples</ion-select-option>
-            <ion-select-option value="oranges">Oranges</ion-select-option>
-            <ion-select-option value="bananas">Bananas</ion-select-option>
-          </ion-select>
-        </ion-item>
-
-        <ion-item>
-          <ion-select interface="popover" placeholder="Empacotador">
-            <ion-select-option value="apples">Apples</ion-select-option>
-            <ion-select-option value="oranges">Oranges</ion-select-option>
-            <ion-select-option value="bananas">Bananas</ion-select-option>
-          </ion-select>
-        </ion-item>
-
-        <ion-item>
-          <ion-select interface="popover" placeholder="Organizador">
-            <ion-select-option value="apples">Apples</ion-select-option>
-            <ion-select-option value="oranges">Oranges</ion-select-option>
-            <ion-select-option value="bananas">Bananas</ion-select-option>
-          </ion-select>
-        </ion-item>
-
-        <ion-item>
-          <ion-select interface="popover" placeholder="Datas Especiais">
-            <ion-select-option value="apples">Apples</ion-select-option>
-            <ion-select-option value="oranges">Oranges</ion-select-option>
-            <ion-select-option value="bananas">Bananas</ion-select-option>
-          </ion-select>
-        </ion-item>
-
-      </ion-list>
-
-
-
-
+    </div>
 
   </ion-content>
 </div>

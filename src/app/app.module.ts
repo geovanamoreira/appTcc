@@ -10,6 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { IonicStorageModule } from '@ionic/storage-angular';
 import { Drivers } from '@ionic/storage';
 
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -25,3 +26,5 @@ import { Drivers } from '@ionic/storage';
   bootstrap: [AppComponent],
 })
 export class AppModule {}
+
+
