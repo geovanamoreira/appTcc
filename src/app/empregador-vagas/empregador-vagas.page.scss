@@ -1,9 +1,37 @@
-card-vagas{
-  background-color: 	#b3b4db;
+
+.card{
+  background-color: 	#abacdd;
   padding: 15px;
   border-radius: 5px;
   margin: 15px;
   float: center;
   font-family: Arial, Helvetica, sans-serif;
   text-decoration: none;
+}
+
+
+ion-item{
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+ion-button{
+  text-align: center;
+  --background: #3a346d;
+  width: 100%;
+  font-weight: bold;
+}
+
+h1{
+  font-size: 33px;
+  margin-bottom: 30px;
+}
+
+ion-label{
+  font-weight: bolder;
+  font-size: 20px;
+}
+
+ion-toolbar{
+  --background: #b0bee6;
 }

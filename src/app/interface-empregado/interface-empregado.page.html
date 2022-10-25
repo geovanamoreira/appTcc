@@ -1,6 +1,6 @@
 <ion-menu side="start" content-id="main-content">
   <ion-header>
-    <ion-toolbar translucent>
+    <ion-toolbar>
       <ion-title>Menu</ion-title>
     </ion-toolbar>
   </ion-header>
@@ -36,7 +36,7 @@
 
       <ion-item>
         <ion-icon name="exit" slot="start" color="danger"></ion-icon>
-        <ion-label [routerLink]="['../login-empregado']" routerLinkActive="router-link-active" color="danger">Sair</ion-label>
+        <ion-label [routerLink]="['../home']" routerLinkActive="router-link-active" color="danger">Sair</ion-label>
       </ion-item>
 
 
@@ -56,6 +56,10 @@
     </ion-toolbar>
   </ion-header>
   <ion-content>
+
+    <div>
+      <ion-searchbar></ion-searchbar>
+    </div>
 
 
 

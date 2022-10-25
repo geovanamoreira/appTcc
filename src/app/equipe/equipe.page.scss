@@ -5,8 +5,26 @@
 
 .card{
   border-radius: 5px;
-  border-left: 3px solid rgb(162, 3, 255);
+  border-left: 3px solid rgb(183, 87, 238);
   margin: 10px;
   padding: 10px;
+  box-shadow: 7px 7px 13px 0 rgba(50, 50, 50, 0.22);
+}
+.gif{
+  width: 120px;
+  margin-left: 230px;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  border-right: 3px solid rgb(255, 3, 150);
+  padding-right: 10px;
+  border-radius: 5px;
+
 }
 
+ion-content{
+  --background: linear-gradient(#b0bee6, #f7f7f7);
+}
+
+ion-toolbar{
+  --background: #b0bee6;
+}
