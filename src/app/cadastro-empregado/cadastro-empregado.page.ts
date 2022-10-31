@@ -1,3 +1,4 @@
+
 import { comparaValidator } from './../validators/compara-validator';
 import { CpfValidator } from './../validators/cpf-validator';
 
