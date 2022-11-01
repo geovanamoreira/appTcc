@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Empregado } from '../models/cadastro-empregado.model';
+import { StorageService } from '../services/storage.service';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +9,14 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  listaEmpregados: Empregado[] = [];
+  constructor(private storageService: StorageService) {}
 
+  async buscarEmpregados(){
+    this.listaEmpregados = await this.storageService.getAll();
+  }
+
+  ionViewDidEnter(){
+    this.buscarEmpregados();
+  }
 }

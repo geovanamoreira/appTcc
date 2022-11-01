@@ -4,6 +4,10 @@ import { CpfValidator } from './../validators/cpf-validator';
 
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { Empregado } from '../models/cadastro-empregado.model';
+import { CadastroEmpregadoService } from '../services/cadastro-empregado.service';
+import { StorageService } from '../services/storage.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cadastro-empregado',
@@ -11,6 +15,9 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
   styleUrls: ['./cadastro-empregado.page.scss'],
 })
 export class CadastroEmpregadoPage implements OnInit {
+
+  empregados: Empregado[] = [];
+  empregado: Empregado;
 
   formCadastro: FormGroup;
 
@@ -44,7 +51,7 @@ export class CadastroEmpregadoPage implements OnInit {
     ],
   };
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private storageService: StorageService, private route: Router) {
     this.formCadastro = this.formBuilder.group({
       nome: ['', Validators.compose([Validators.required, Validators.minLength(3)])],
       cpf: ['', Validators.compose([Validators.required, CpfValidator.cpfValido])],
@@ -63,8 +70,21 @@ export class CadastroEmpregadoPage implements OnInit {
   ngOnInit() {
   }
 
-  salvarCadastro(){
-    console.log('Formulário: ', this.formCadastro.valid);
+  async salvarCadastro(){
+    if(this.formCadastro.valid){
+      this.empregado.nome = this.formCadastro.value.nome;
+      this.empregado.cpf = this.formCadastro.value.cpf;
+      this.empregado.email = this.formCadastro.value.email;
+      this.empregado.idade = this.formCadastro.value.idade;
+      this.empregado.experiencias = this.formCadastro.value.experiencias;
+      this.empregado.disponibilidade = this.formCadastro.value.disponibilidade;
+      await this.storageService.set(this.empregado.email, this.empregado);
+      this.route.navigateByUrl('/home');
+    }
+
+    else{
+      alert('Formulário Inválido!');
+    }
   }
 
 }
