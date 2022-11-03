@@ -74,7 +74,11 @@ const routes: Routes = [
   {
     path: 'equipe',
     loadChildren: () => import('./equipe/equipe.module').then( m => m.EquipePageModule)
+  },  {
+    path: 'usuario-cadastro',
+    loadChildren: () => import('./usuario-cadastro/usuario-cadastro.module').then( m => m.UsuarioCadastroPageModule)
   },
+
 
 
 ];

@@ -79,7 +79,7 @@ export class CadastroEmpregadoPage implements OnInit {
       this.empregado.experiencias = this.formCadastro.value.experiencias;
       this.empregado.disponibilidade = this.formCadastro.value.disponibilidade;
       await this.storageService.set(this.empregado.email, this.empregado);
-      this.route.navigateByUrl('/home');
+      this.route.navigateByUrl('/usuario-cadastro');
     }
 
     else{
