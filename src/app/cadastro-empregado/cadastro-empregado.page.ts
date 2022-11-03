@@ -1,11 +1,8 @@
-
+import { Empregado } from './../models/cadastro-empregado.model';
 import { comparaValidator } from './../validators/compara-validator';
 import { CpfValidator } from './../validators/cpf-validator';
-
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import { Empregado } from '../models/cadastro-empregado.model';
-import { CadastroEmpregadoService } from '../services/cadastro-empregado.service';
 import { StorageService } from '../services/storage.service';
 import { Router } from '@angular/router';
 
@@ -18,6 +15,7 @@ export class CadastroEmpregadoPage implements OnInit {
 
   empregados: Empregado[] = [];
   empregado: Empregado;
+
 
   formCadastro: FormGroup;
 

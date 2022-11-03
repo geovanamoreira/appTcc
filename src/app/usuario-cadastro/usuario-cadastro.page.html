@@ -6,11 +6,13 @@
 
 <ion-content>
   <ion-list>
-    <ion-item-sliding *ngFor="let user of ">
+    <ion-item-sliding *ngFor="let user of listaEmpregados">
       <ion-item>
         <ion-label>
           <div>
-
+            <h1>{{empregado.nome}}</h1>
+            <span style="float: right;">{{empregado.cpf}}</span>
+            <a href="mailto:{{empregado.email}}">{{empregado.email}}</a>
           </div>
         </ion-label>
       </ion-item>
