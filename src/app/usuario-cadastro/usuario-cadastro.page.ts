@@ -9,8 +9,6 @@ import { StorageService } from '../services/storage.service';
 })
 export class UsuarioCadastroPage implements OnInit {
 
-  empregado: Empregado;
-
   listaEmpregados: Empregado[] = [];
 
   constructor(private storageService: StorageService) { }

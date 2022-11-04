@@ -1,6 +1,11 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title></ion-title>
+    <ion-title>Usuários</ion-title>
+
+    <ion-buttons>
+      <ion-button routerLink="/cadastro-empregado"></ion-button>
+      <ion-icon slot="icon-only" name="person-add-outline"></ion-icon>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -10,9 +15,9 @@
       <ion-item>
         <ion-label>
           <div>
-            <h1>{{empregado.nome}}</h1>
-            <span style="float: right;">{{empregado.cpf}}</span>
-            <a href="mailto:{{empregado.email}}">{{empregado.email}}</a>
+            <h1>{{user.nome}}</h1>
+            <span style="float: right;">{{user.cpf}}</span>
+            <a href="mailto:{{user.email}}">{{user.email}}</a>
           </div>
         </ion-label>
       </ion-item>

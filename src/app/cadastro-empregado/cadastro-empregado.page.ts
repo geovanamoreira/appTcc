@@ -1,10 +1,10 @@
-import { Empregado } from './../models/cadastro-empregado.model';
 import { comparaValidator } from './../validators/compara-validator';
 import { CpfValidator } from './../validators/cpf-validator';
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { StorageService } from '../services/storage.service';
 import { Router } from '@angular/router';
+import { Empregado } from '../models/cadastro-empregado.model';
 
 @Component({
   selector: 'app-cadastro-empregado',
@@ -13,11 +13,10 @@ import { Router } from '@angular/router';
 })
 export class CadastroEmpregadoPage implements OnInit {
 
-  empregados: Empregado[] = [];
-  empregado: Empregado;
 
 
   formCadastro: FormGroup;
+  empregado: Empregado = new Empregado();
 
   mensagens = {
     nome: [
