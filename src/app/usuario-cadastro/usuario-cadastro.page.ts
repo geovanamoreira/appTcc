@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Empregado } from '../models/cadastro-empregado.model';
+import { IEmpregado } from '../models/cadastro-empregado.model';
 import { StorageService } from '../services/storage.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { StorageService } from '../services/storage.service';
 })
 export class UsuarioCadastroPage implements OnInit {
 
-  listaEmpregados: Empregado[] = [];
+  listaEmpregados: IEmpregado[] = [];
 
   constructor(private storageService: StorageService) { }
 
@@ -21,6 +21,11 @@ export class UsuarioCadastroPage implements OnInit {
   }
 
   ionViewDidEnter(){
+    this.buscarEmpregados();
+  }
+
+   async excluirCadastro(email: string){
+    this.storageService.remove(email);
     this.buscarEmpregados();
   }
 

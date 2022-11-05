@@ -59,10 +59,7 @@ const routes: Routes = [
     path: 'empregado-mensagens',
     loadChildren: () => import('./empregado-mensagens/empregado-mensagens.module').then( m => m.EmpregadoMensagensPageModule)
   },
-  {
-    path: 'empresa',
-    loadChildren: () => import('./empresa/empresa.module').then( m => m.EmpresaPageModule)
-  },
+
   {
     path: 'empregador-mensagens',
     loadChildren: () => import('./empregador-mensagens/empregador-mensagens.module').then( m => m.EmpregadorMensagensPageModule)
@@ -74,7 +71,8 @@ const routes: Routes = [
   {
     path: 'equipe',
     loadChildren: () => import('./equipe/equipe.module').then( m => m.EquipePageModule)
-  },  {
+  },
+  {
     path: 'usuario-cadastro',
     loadChildren: () => import('./usuario-cadastro/usuario-cadastro.module').then( m => m.UsuarioCadastroPageModule)
   },

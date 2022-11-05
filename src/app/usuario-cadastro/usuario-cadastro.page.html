@@ -1,10 +1,13 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar class="ion-text-center">
     <ion-title>Usuários</ion-title>
 
-    <ion-buttons>
-      <ion-button routerLink="/cadastro-empregado"></ion-button>
-      <ion-icon slot="icon-only" name="person-add-outline"></ion-icon>
+    <ion-buttons slot="end">
+
+      <ion-button routerLink="/cadastro-empregado">
+        <ion-icon slot="icon-only" name="person-add-outline"></ion-icon>
+      </ion-button>
+
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -12,7 +15,7 @@
 <ion-content>
   <ion-list>
     <ion-item-sliding *ngFor="let user of listaEmpregados">
-      <ion-item>
+      <ion-item routerLink="/interface-empregado">
         <ion-label>
           <div>
             <h1>{{user.nome}}</h1>
@@ -23,10 +26,12 @@
       </ion-item>
 
       <ion-item-options side="end">
-        <ion-item-option color="danger">
+        <ion-item-option color="danger" (click)="excluirCadastro(user.email)">
           <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
         </ion-item-option>
       </ion-item-options>
       </ion-item-sliding>
     </ion-list>
+
+    <ion-button routerLink="/home" class="margem">Voltar</ion-button>
 </ion-content>

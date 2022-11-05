@@ -1,10 +1,10 @@
+import { IEmpregado } from './../models/cadastro-empregado.model';
 import { comparaValidator } from './../validators/compara-validator';
 import { CpfValidator } from './../validators/cpf-validator';
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { StorageService } from '../services/storage.service';
 import { Router } from '@angular/router';
-import { Empregado } from '../models/cadastro-empregado.model';
 
 @Component({
   selector: 'app-cadastro-empregado',
@@ -13,10 +13,8 @@ import { Empregado } from '../models/cadastro-empregado.model';
 })
 export class CadastroEmpregadoPage implements OnInit {
 
-
-
   formCadastro: FormGroup;
-  empregado: Empregado = new Empregado();
+  empregado: IEmpregado = new IEmpregado();
 
   mensagens = {
     nome: [
@@ -73,8 +71,6 @@ export class CadastroEmpregadoPage implements OnInit {
       this.empregado.cpf = this.formCadastro.value.cpf;
       this.empregado.email = this.formCadastro.value.email;
       this.empregado.idade = this.formCadastro.value.idade;
-      this.empregado.experiencias = this.formCadastro.value.experiencias;
-      this.empregado.disponibilidade = this.formCadastro.value.disponibilidade;
       await this.storageService.set(this.empregado.email, this.empregado);
       this.route.navigateByUrl('/usuario-cadastro');
     }
