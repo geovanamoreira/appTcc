@@ -1,4 +1,4 @@
-export interface Empregado{
+export interface IEmpregado{
   id: number;
   nome: string;
   cpf: string;
