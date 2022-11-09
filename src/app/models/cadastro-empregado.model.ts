@@ -4,4 +4,7 @@ export class IEmpregado{
   cpf: string;
   idade: number;
   email: string;
+  telefone: number;
+  cvPix: string;
+  experiencias: string;
 }

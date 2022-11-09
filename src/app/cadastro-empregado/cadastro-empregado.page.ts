@@ -44,6 +44,18 @@ export class CadastroEmpregadoPage implements OnInit {
       { tipo: 'minlength', mensagem: 'A idade deve ter pelo menos 2 caracteres.', },
       { tipo: 'maxlength', mensagem: 'A idade deve ter no máximo 2 caractéres.' },
     ],
+    telefone: [
+      { tipo: 'required', mensagem: 'Campo obrigatório!.' },
+      { tipo: 'minlength', mensagem: 'O telefone deve ter pelo menos 11 caracteres.', },
+      { tipo: 'maxlength', mensagem: 'O telefone deve ter no máximo 11 caractéres.' },
+    ],
+    cvPix: [
+      { tipo: 'required', mensagem: 'Campo obrigatório!' },
+    ],
+    experiencias: [
+      { tipo: 'required', mensagem: 'Campo obrigatório!' },
+      { tipo: 'maxlength', mensagem: 'Deve ter no máximo 191 caractéres.' },
+    ],
   };
 
   constructor(private formBuilder: FormBuilder, private storageService: StorageService, private route: Router) {
@@ -52,9 +64,9 @@ export class CadastroEmpregadoPage implements OnInit {
       cpf: ['', Validators.compose([Validators.required, CpfValidator.cpfValido])],
       idade: ['', Validators.compose([Validators.required, Validators.minLength(2), Validators.maxLength(2)])],
       email: ['', Validators.compose([Validators.required, Validators.email])],
-      telefone: ['',],
-      cvPix: ['',],
-      experiencias: ['',],
+      telefone: ['', Validators.compose([Validators.required, Validators.minLength(11), Validators.maxLength(11)])],
+      cvPix: ['', Validators.required],
+      experiencias: ['', Validators.compose([Validators.required, Validators.maxLength(191)])],
       senha: ['', Validators.compose([Validators.required, Validators.minLength(8)])],
       confirmaSenha: ['', Validators.compose([Validators.required, Validators.minLength(8)])]
     }, {
@@ -71,6 +83,9 @@ export class CadastroEmpregadoPage implements OnInit {
       this.empregado.cpf = this.formCadastro.value.cpf;
       this.empregado.email = this.formCadastro.value.email;
       this.empregado.idade = this.formCadastro.value.idade;
+      this.empregado.telefone = this.formCadastro.value.telefone;
+      this.empregado.cvPix = this.formCadastro.value.cvPix;
+      this.empregado.experiencias = this.formCadastro.value.experiencias;
       await this.storageService.set(this.empregado.email, this.empregado);
       this.route.navigateByUrl('/usuario-cadastro');
     }

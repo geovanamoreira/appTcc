@@ -65,6 +65,42 @@
           </ion-item>
 
           <ion-item>
+            <ion-label position="floating">Telefone</ion-label>
+            <ion-input formControlName="telefone">
+            </ion-input>
+            <ng-container *ngFor="let erro of mensagens.telefone">
+              <span class="msg-erro"
+              *ngIf="formCadastro.get('telefone').hasError(erro.tipo) && (formCadastro.get('telefone').dirty || formCadastro.get('telefone').touched)">
+                {{erro.mensagem}}
+              </span>
+            </ng-container>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Chave pix</ion-label>
+            <ion-input formControlName="cvPix">
+            </ion-input>
+            <ng-container *ngFor="let erro of mensagens.cvPix">
+              <span class="msg-erro"
+              *ngIf="formCadastro.get('cvPix').hasError(erro.tipo) && (formCadastro.get('cvPix').dirty || formCadastro.get('cvPix').touched)">
+                {{erro.mensagem}}
+              </span>
+            </ng-container>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Experiências</ion-label>
+            <ion-input formControlName="experiencias">
+            </ion-input>
+            <ng-container *ngFor="let erro of mensagens.experiencias">
+              <span class="msg-erro"
+              *ngIf="formCadastro.get('experiencias').hasError(erro.tipo) && (formCadastro.get('experiencias').dirty || formCadastro.get('experiencias').touched)">
+                {{erro.mensagem}}
+              </span>
+            </ng-container>
+          </ion-item>
+
+          <ion-item>
             <ion-label position="floating">Senha</ion-label>
             <ion-input type="password" formControlName="senha">
             </ion-input>
