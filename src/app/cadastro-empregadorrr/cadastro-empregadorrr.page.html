@@ -55,16 +55,34 @@
           <ion-item>
             <ion-label position="floating">Telefone</ion-label>
             <ion-input></ion-input>
+            <ng-container *ngFor="let erro of mensagens.telefone">
+              <span class="msg-erro"
+              *ngIf="formCadastro.get('telefone').hasError(erro.tipo) && (formCadastro.get('telefone').dirty || formCadastro.get('telefone').touched)">
+                {{erro.mensagem}}
+              </span>
+            </ng-container>
           </ion-item>
 
           <ion-item>
             <ion-label position="floating">Chave Pix</ion-label>
             <ion-input></ion-input>
+            <ng-container *ngFor="let erro of mensagens.cvPix">
+              <span class="msg-erro"
+              *ngIf="formCadastro.get('cvPix').hasError(erro.tipo) && (formCadastro.get('cvPix').dirty || formCadastro.get('cvPix').touched)">
+                {{erro.mensagem}}
+              </span>
+            </ng-container>
           </ion-item>
 
           <ion-item>
             <ion-label position="floating">Endereço</ion-label>
             <ion-input></ion-input>
+            <ng-container *ngFor="let erro of mensagens.endereco">
+              <span class="msg-erro"
+              *ngIf="formCadastro.get('endereco').hasError(erro.tipo) && (formCadastro.get('endereco').dirty || formCadastro.get('endereco').touched)">
+                {{erro.mensagem}}
+              </span>
+            </ng-container>
           </ion-item>
 
           <ion-item>
