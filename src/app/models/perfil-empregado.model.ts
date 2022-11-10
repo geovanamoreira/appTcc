@@ -14,7 +14,6 @@ export class Empregado{
 export class Cidade{
   id: number;
   nome: string;
-  estado: Estado;
 }
 
 export class Estado{
