@@ -75,7 +75,11 @@ const routes: Routes = [
   {
     path: 'usuario-cadastro',
     loadChildren: () => import('./usuario-cadastro/usuario-cadastro.module').then( m => m.UsuarioCadastroPageModule)
+  },  {
+    path: 'usuario-empregador',
+    loadChildren: () => import('./usuario-empregador/usuario-empregador.module').then( m => m.UsuarioEmpregadorPageModule)
   },
+
 
 
 
