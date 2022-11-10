@@ -15,18 +15,15 @@
       <div class="foto">
         <img src="../assets/empregado.png" alt="">
       </div>
-      <h2>{{empregado?.cpf}}</h2>
+      <h2>{{empregado.nome}}</h2>
     </div>
-
-    <hr size="10" width="100%" align="center" noshade>
-    <br>
 
 
     <div class="card">
       <h2>Descrição</h2>
          <div class="dadostabela">
-          <p>
-            UWU
+          <p class="ion-text-center">
+            {{empregado.disponibilidade}}
           </p>
          </div>
     </div>
@@ -36,10 +33,7 @@
         <h2>Currículo</h2>
           <div>
             <ul>
-              <li>Especialização em xxx</li>
-              <li>Experiencia em xxx</li>
-              <li>Experiencia em xxx</li>
-              <li>Experiencia em xxx</li>
+              <li>{{empregado.experiencias}}</li>
             </ul>
           </div>
     </div>
@@ -49,11 +43,11 @@
       <div>
         <h2>Contato</h2>
         <ul>
-            <li><img src="../assets/icone-email.png" width= "15px" height="15px" alt="Icone Email"/> <a href="mailto: maisamidei@gmail.com">  maisamidei@gmail.com</a></li>
+            <li><img src="../assets/icone-email.png" width= "15px" height="15px" alt="Icone Email"/> <a href="{{empregado.email}}">{{empregado.email}}</a></li>
             <br>
-            <li><img src="../assets/fone-icone.png"  width="15px" height="15px" alt="Icone Telefone"> (14)988007714 </li>
+            <li><img src="../assets/fone-icone.png"  width="15px" height="15px" alt="Icone Telefone">{{empregado.telefone}}</li>
             <br>
-            <li><img src="../assets/icone-cidade.png"  width="15px" height="15px" alt="Icone Cidade"> Lençóis Paulista - São Paulo</li>
+            <li><img src="../assets/icone-cidade.png"  width="15px" height="15px" alt="Icone Cidade">{{empregado.cidade?.nome}}</li>
         </ul>
        </div>
     </div>

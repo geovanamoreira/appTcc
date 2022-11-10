@@ -1,6 +1,6 @@
 import { ActivatedRoute } from '@angular/router';
 import { PerfilEmpregadoService } from './../services/perfil-empregado.service';
-import { IEmpregado } from '../models/perfil-empregado.model';
+import { Empregado } from '../models/perfil-empregado.model';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -10,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PerfilEmpregadoPage implements OnInit {
 
-  empregado: IEmpregado;
+  empregado: Empregado = new Empregado();
 
   constructor(private perfilEmpregadoService: PerfilEmpregadoService, private activateRoute: ActivatedRoute) { }
 
@@ -18,13 +18,12 @@ export class PerfilEmpregadoPage implements OnInit {
     this.exibirEmpregado();
   }
 
-  exibirEmpregado(){
+  async exibirEmpregado(){
     const id = Number(this.activateRoute.snapshot.paramMap.get('id'));
-    this.perfilEmpregadoService.buscarEmpregadoPeloId(1).subscribe(retorno =>{
+    await this.perfilEmpregadoService.buscarEmpregadoPeloId(1).subscribe(retorno =>{
       this.empregado = retorno;
+      console.log(this.empregado);
     });
-
-    console.log(this.empregado.nome);
 
   }
 
