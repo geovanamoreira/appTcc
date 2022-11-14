@@ -1,8 +1,10 @@
 import { comparaValidator } from './../validators/compara-validator';
 import { CpfValidator } from './../validators/cpf-validator';
-
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { IEmpregador } from '../models/cadastro-empregador.model';
+import { Router } from '@angular/router';
+import { StorageService } from '../services/storage.service';
 
 @Component({
   selector: 'app-cadastro-empregadorrr',
@@ -12,6 +14,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 export class CadastroEmpregadorrrPage implements OnInit {
 
   formCadastro: FormGroup;
+  empregador: IEmpregador = new IEmpregador();
 
   mensagens = {
     nome: [
@@ -19,8 +22,8 @@ export class CadastroEmpregadorrrPage implements OnInit {
       { tipo: 'minlength', mensagem: 'O nome deve ter pelo menos 3 caracteres.' },
     ],
     cpf: [
-      { tipo: 'required', mensagem: 'O campo CPF é obrigatório.' },
-      { tipo: 'invalido', mensagem: 'CPF Inválido.' },
+      { tipo: 'required', mensagem: 'O campo CNPJ é obrigatório.' },
+      { tipo: 'invalido', mensagem: 'CNPJ Inválido.' },
     ],
     email: [
       { tipo: 'required', mensagem: 'O campo E-mail é obrigatório.' },
@@ -28,18 +31,13 @@ export class CadastroEmpregadorrrPage implements OnInit {
     ],
     senha: [
       { tipo: 'required', mensagem: 'É obrigatório confirmar senha.' },
-      { tipo: 'minlength', mensagem: 'A senha deve ter pelo menos 6 caracteres.', },
+      { tipo: 'minlength', mensagem: 'A senha deve ter pelo menos 8 caracteres.', },
       { tipo: 'maxlength', mensagem: 'A senha deve ter no máximo 8 caractéres.' },
     ],
     confirmaSenha: [
       { tipo: 'required', mensagem: 'É obrigatório confirmar senha.' },
       { tipo: 'minlength', mensagem: 'A senha deve ter pelo menos 8 caracteres.', },
       { tipo: 'comparacao', mensagem: 'Deve ser igual a senha.' },
-    ],
-    idade: [
-      { tipo: 'required', mensagem: 'É obrigatório digitar a idade.' },
-      { tipo: 'minlength', mensagem: 'A idade deve ter pelo menos 2 caracteres.', },
-      { tipo: 'maxlength', mensagem: 'A idade deve ter no máximo 2 caractéres.' },
     ],
     telefone: [
       { tipo: 'required', mensagem: 'Campo obrigatório!.' },
@@ -55,15 +53,14 @@ export class CadastroEmpregadorrrPage implements OnInit {
     ],
   };
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private storageService: StorageService, private route: Router) {
     this.formCadastro = this.formBuilder.group({
       nome: ['', Validators.compose([Validators.required, Validators.minLength(3)])],
       cpf: ['', Validators.compose([Validators.required, CpfValidator.cpfValido])],
-      idade: ['', Validators.compose([Validators.required, Validators.minLength(2), Validators.maxLength(2)])],
       email: ['', Validators.compose([Validators.required, Validators.email])],
       telefone: ['', Validators.compose([Validators.required, Validators.minLength(11), Validators.maxLength(11)])],
       cvPix: ['', Validators.required],
-      endereço: ['', Validators.compose([Validators.required, Validators.maxLenght(100)])],
+      endereco: ['', Validators.compose([Validators.required, Validators.maxLength(100)])],
       senha: ['', Validators.compose([Validators.required, Validators.minLength(8)])],
       confirmaSenha: ['', Validators.compose([Validators.required, Validators.minLength(8)])]
     }, {
@@ -74,8 +71,21 @@ export class CadastroEmpregadorrrPage implements OnInit {
   ngOnInit() {
   }
 
-  salvarCadastro(){
-    console.log('Formulário: ', this.formCadastro.valid);
+  async salvarCadastroEmpregador(){
+    if(this.formCadastro.valid){
+      this.empregador.nome = this.formCadastro.value.nome;
+      this.empregador.cpf = this.formCadastro.value.cpf;
+      this.empregador.email = this.formCadastro.value.email;
+      this.empregador.telefone = this.formCadastro.value.telefone;
+      this.empregador.cvPix = this.formCadastro.value.cvPix;
+      this.empregador.endereco = this.formCadastro.value.endereco;
+      await this.storageService.set(this.empregador.email, this.empregador);
+      this.route.navigateByUrl('../usuario-empregador');
+    }
+
+    else{
+      alert('Formulário Inválido!');
+    }
   }
 
 }

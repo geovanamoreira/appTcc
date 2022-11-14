@@ -54,7 +54,8 @@
 
           <ion-item>
             <ion-label position="floating">Telefone</ion-label>
-            <ion-input></ion-input>
+            <ion-input formControlName="telefone">
+            </ion-input>
             <ng-container *ngFor="let erro of mensagens.telefone">
               <span class="msg-erro"
               *ngIf="formCadastro.get('telefone').hasError(erro.tipo) && (formCadastro.get('telefone').dirty || formCadastro.get('telefone').touched)">
@@ -65,7 +66,8 @@
 
           <ion-item>
             <ion-label position="floating">Chave Pix</ion-label>
-            <ion-input></ion-input>
+            <ion-input formControlName="cvPix">
+            </ion-input>
             <ng-container *ngFor="let erro of mensagens.cvPix">
               <span class="msg-erro"
               *ngIf="formCadastro.get('cvPix').hasError(erro.tipo) && (formCadastro.get('cvPix').dirty || formCadastro.get('cvPix').touched)">
@@ -76,7 +78,8 @@
 
           <ion-item>
             <ion-label position="floating">Endereço</ion-label>
-            <ion-input></ion-input>
+            <ion-input formControlName="endereco">
+            </ion-input>
             <ng-container *ngFor="let erro of mensagens.endereco">
               <span class="msg-erro"
               *ngIf="formCadastro.get('endereco').hasError(erro.tipo) && (formCadastro.get('endereco').dirty || formCadastro.get('endereco').touched)">
@@ -110,11 +113,8 @@
           </ion-item>
 
           <div>
-            <ion-button size="large" (click)="salvarCadastro()">Entrar</ion-button>
+            <ion-button size="large" (click)="salvarCadastroEmpregador()">Entrar</ion-button>
           </div>
-
-
-
         </form>
        </div>
 

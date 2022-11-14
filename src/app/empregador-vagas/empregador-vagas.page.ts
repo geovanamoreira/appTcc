@@ -5,11 +5,12 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './empregador-vagas.page.html',
   styleUrls: ['./empregador-vagas.page.scss'],
 })
+
 export class EmpregadorVagasPage implements OnInit {
+
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
-
 }

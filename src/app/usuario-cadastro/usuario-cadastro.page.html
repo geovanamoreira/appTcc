@@ -14,19 +14,19 @@
 
 <ion-content>
   <ion-list>
-    <ion-item-sliding *ngFor="let user of listaEmpregados">
+    <ion-item-sliding *ngFor="let empregado of listaEmpregados">
       <ion-item routerLink="/interface-empregado">
         <ion-label>
           <div>
-            <h1>{{user.nome}}</h1>
-            <span style="float: right;">{{user.cpf}}</span>
-            <a href="mailto:{{user.email}}">{{user.email}}</a>
+            <h1>{{empregado.nome}}</h1>
+            <span style="float: right;">{{empregado.cpf}}</span>
+            <a href="mailto:{{empregado.email}}">{{empregado.email}}</a>
           </div>
         </ion-label>
       </ion-item>
 
       <ion-item-options side="end">
-        <ion-item-option color="danger" (click)="excluirCadastro(user.email)">
+        <ion-item-option color="danger" (click)="excluirCadastro(empregado.email)">
           <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
         </ion-item-option>
       </ion-item-options>

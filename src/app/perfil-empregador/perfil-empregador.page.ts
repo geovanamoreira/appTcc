@@ -1,4 +1,7 @@
+import { Empregador } from './../models/perfil-empregador.model';
 import { Component, OnInit } from '@angular/core';
+import { PerfilEmpregadorService } from '../services/perfil-empregador.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-perfil-empregador',
@@ -7,9 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PerfilEmpregadorPage implements OnInit {
 
-  constructor() { }
+  empregador: Empregador = new Empregador();
 
-  ngOnInit() {
+  constructor(private perfilEmpregadorService: PerfilEmpregadorService, private activateRoute: ActivatedRoute) { }
+
+  ngOnInit(): void {
+    this.exibirEmpregador();
+  }
+
+  async exibirEmpregador(){
+    const id = Number(this.activateRoute.snapshot.paramMap.get('id'));
+    await this.perfilEmpregadorService.buscarEmpregadoPeloId(1).subscribe(retorno =>{
+      this.empregador = retorno;
+    });
+
   }
 
 }

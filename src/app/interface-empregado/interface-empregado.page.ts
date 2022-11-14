@@ -1,4 +1,7 @@
+import { ActivatedRoute } from '@angular/router';
+import { InterfaceEmpregadoService } from './../services/interface-empregado.service';
 import { Component, OnInit } from '@angular/core';
+import { Empregado } from '../models/perfil-empregado.model';
 
 @Component({
   selector: 'app-interface-empregado',
@@ -7,9 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InterfaceEmpregadoPage implements OnInit {
 
-  constructor() { }
+  empregado: Empregado = new Empregado();
 
-  ngOnInit() {
+  constructor(private interfaceEmpregadoService: InterfaceEmpregadoService, private activateRoute: ActivatedRoute) { }
+
+  ngOnInit(): void {
+    this.exibirEmpregado();
+  }
+
+  async exibirEmpregado(){
+    const id = Number(this.activateRoute.snapshot.paramMap.get('id'));
+    await this.interfaceEmpregadoService.buscarEmpregadoPeloId(1).subscribe(retorno =>{
+      this.empregado = retorno;
+    });
+
   }
 
 }

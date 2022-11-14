@@ -15,7 +15,7 @@
       <div class="foto">
         <img src="https://play-lh.googleusercontent.com/zbqruZrdVULsGpzYAun1Wud8Yw_1wrJlTCzgmGmI3pJFXCRrt4jKjMzBP6mGmU1UJkme" alt="">
       </div>
-      <h2>Geovana Moreira de Oliveira</h2>
+      <h2>{{empregador.nome}}</h2>
     </div>
 
     <hr size="10" width="100%" align="center" noshade>
@@ -34,7 +34,7 @@
         <h2>CNPJ</h2>
           <div>
             <ul>
-              <li>XX.XXX.XXX/0001-XX</li>
+              <li>{{empregador.cnpj}}</li>
             </ul>
           </div>
     </div>
@@ -44,11 +44,13 @@
       <div>
         <h2>Contato</h2>
         <ul>
-            <li><img src="../assets/icone-email.png" width= "15px" height="15px" alt="Icone Email"/> <a href="mailto: maisamidei@gmail.com">  maisamidei@gmail.com</a></li>
+            <li><img src="../assets/icone-email.png" width= "15px" height="15px" alt="Icone Email"/> <a href="{{empregador.email}}">{{empregador.email}}</a></li>
             <br>
-            <li><img src="../assets/fone-icone.png"  width="15px" height="15px" alt="Icone Telefone"> (14)988007714 </li>
+            <li><img src="../assets/fone-icone.png"  width="15px" height="15px" alt="Icone Telefone">{{empregador.telefone}}</li>
             <br>
-            <li><img src="../assets/icone-cidade.png"  width="15px" height="15px" alt="Icone Cidade"> Lençóis Paulista - São Paulo</li>
+            <li><ion-icon name="globe-outline"></ion-icon>{{empregador.empresa?.email}}</li>
+            <br>
+            <li><img src="../assets/icone-cidade.png"  width="15px" height="15px" alt="Icone Cidade">{{empregador.cidade?.nome}}</li>
         </ul>
        </div>
     </div>

@@ -22,7 +22,6 @@ export class PerfilEmpregadoPage implements OnInit {
     const id = Number(this.activateRoute.snapshot.paramMap.get('id'));
     await this.perfilEmpregadoService.buscarEmpregadoPeloId(1).subscribe(retorno =>{
       this.empregado = retorno;
-      console.log(this.empregado);
     });
 
   }
