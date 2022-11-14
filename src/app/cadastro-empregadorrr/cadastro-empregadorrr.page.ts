@@ -80,7 +80,7 @@ export class CadastroEmpregadorrrPage implements OnInit {
       this.empregador.cvPix = this.formCadastro.value.cvPix;
       this.empregador.endereco = this.formCadastro.value.endereco;
       await this.storageService.set(this.empregador.email, this.empregador);
-      this.route.navigateByUrl('../usuario-empregador');
+      this.route.navigateByUrl('/usuario-empregador');
     }
 
     else{
