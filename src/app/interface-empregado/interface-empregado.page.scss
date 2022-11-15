@@ -27,7 +27,7 @@ b {
 
 p {
   padding: 0 40px;
-  font-size: 14px;
+  font-size: 20px;
   line-height: 1.5;
   color: var(--ion-color-step-600, #60646b);
 }
@@ -105,3 +105,32 @@ h2{
   font-size: 25px;
 }
 
+ion-badge{
+  background-color: #7989b6;
+  width: 25px;
+  margin-left: 40px;
+}
+
+.largura{
+  width: 70px;
+}
+
+.icone1{
+  height: 50px;
+}
+
+.icone2{
+  height: 50px;
+}
+
+.caralho{
+  background-color: #6578ac;
+}
+
+.caralho2{
+  background-color: #485986;
+}
+
+.p{
+  font-size: 15px;
+}

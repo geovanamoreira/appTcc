@@ -4,12 +4,13 @@
       <ion-title>Menu</ion-title>
     </ion-toolbar>
   </ion-header>
+
   <ion-content>
     <ion-list>
 
       <ion-item>
         <ion-thumbnail slot="start">
-          <img alt="Silhouette of mountains"   class="foto-perfil" src="../assets/empregado.png" />
+          <img alt="Silhouette of mountains" class="foto-perfil" src="../assets/empregado.png" />
         </ion-thumbnail>
         <ion-label>Bem vinda(o), {{empregado.nome}}!</ion-label>
       </ion-item>
@@ -36,8 +37,8 @@
 
       <br>
 
-      <p class="ion-text-center">Entre em contato conosco!</p>
-      <p class="ion-text-center" href="mailto:geovana.oliveira47@etec.sp.gov.br">geovana.oliveira47@etec.sp.gov.br</p>
+      <p class="ion-text-center p">Entre em contato conosco!</p>
+      <p class="ion-text-center p" href="mailto:geovana.oliveira47@etec.sp.gov.br">geovana.oliveira47@etec.sp.gov.br</p>
 
     </ion-list>
   </ion-content>
@@ -71,46 +72,32 @@
       </div>
       <h3>27C°</h3>
 
-
-
     </div>
 
 
-    <div class="card">
-      <h2>Cozinheiro</h2>
-      <hr size="10" width="100%" align="center" noshade>
-         <div class="dadostabela">
-          <p> <b>Local:</b>  CIA da esfiha, RUA xxxxxxx N:58</p>
-          <p> <b>Descrição:</b> Vaga de cozinheiro para o dia 22/08/2022</p>
-          <p> <b>Horário:</b> 19:00</p>
-          <p> <b>Pagamento:</b> 60,00</p>
-          <p> <b>Quantidade de vagas:</b> 2</p>
-          <hr size="10" width="100%" align="center" noshade>
-         </div>
-         <div class="ion-button ion-padding">
-          <ion-button size="large" class="aceitar-botao">Aceitar</ion-button>
-          <ion-button size="large" class="recusar-botao">Recusar</ion-button>
-        </div>
+    <br>
 
-    </div>
+    <ion-list>
+      <ion-item-sliding *ngFor="let vaga of listaVagas">
+        <ion-item>
+          <ion-label>
+            <div>
+              <h1>{{vaga.categoria}}</h1>
+              <p>{{vaga.descricao}}</p>
+              <p>{{vaga.horario}}</p>
+              <p>{{vaga.pagamento}}</p>
+              <ion-badge slot="start">{{vaga.qntd}}</ion-badge>
+            </div>
+          </ion-label>
+        </ion-item>
 
-    <div class="card">
-      <h2>Motoboy</h2>
-      <hr size="10" width="100%" align="center" noshade>
-         <div class="dadostabela">
-          <p> <b>Local:</b>  LALA lanches, RUA xxxxxxx N:98</p>
-          <p> <b>Descrição:</b> Vaga de cozinheiro para o dia 22/08/2022</p>
-          <p> <b>Horário:</b> 17:00</p>
-          <p> <b>Pagamento:</b> 80,00</p>
-          <p> <b>Quantidade de vagas:</b> 1</p>
-          <hr size="10" width="100%" align="center" noshade>
-         </div>
-         <div class="ion-button ion-padding">
-          <ion-button size="large" class="aceitar-botao">Aceitar</ion-button>
-          <ion-button size="large" class="recusar-botao">Recusar</ion-button>
-        </div>
+        <ion-item-options>
+          <ion-item-option class="caralho"><ion-icon name="thumbs-up-outline" class="largura icone1"></ion-icon></ion-item-option>
+        </ion-item-options>
 
-    </div>
+        </ion-item-sliding>
+        <br>
+    </ion-list>
 
   </ion-content>
 </div>
