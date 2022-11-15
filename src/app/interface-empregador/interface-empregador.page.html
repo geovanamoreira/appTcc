@@ -71,13 +71,35 @@
 
     <div class="row">
       <div class="card2">
-        <p>Espacinho dedicado a publicação de vagas </p>
+        <p>Suas Vagas disponibilizadas: </p>
 
+        <br>
+
+      <ion-list>
+        <ion-item-sliding *ngFor="let vaga of listaVagas">
+          <ion-item>
+            <ion-label>
+              <div>
+                <h1>{{vaga.categoria}}</h1>
+                <p>{{vaga.descricao}}</p>
+                <p>{{vaga.horario}}</p>
+                <p>{{vaga.pagamento}}</p>
+                <ion-badge slot="start">{{vaga.qntd}}</ion-badge>
+              </div>
+            </ion-label>
+          </ion-item>
+
+          <ion-item-options side="end">
+            <ion-item-option color="danger" (click)="excluirCadastroVagas(vaga.categoria)">
+              <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+            </ion-item-option>
+          </ion-item-options>
+
+          </ion-item-sliding>
+      </ion-list>
+        <br>
       </div>
     </div>
-
-
-
 
 
 

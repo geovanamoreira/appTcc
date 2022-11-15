@@ -4,4 +4,5 @@ export class IVaga{
   qntd: number;
   horario: string;
   pagamento: string;
+  categoria: string;
 }

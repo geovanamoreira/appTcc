@@ -14,30 +14,33 @@
 
 
       <div>
-        <form action="">
+        <form [formGroup]="formCadastro">
+
           <div>
-
             <ion-item>
-              <ion-select interface="popover" placeholder="Categoria" class="categoria">
-                <ion-select-option value="estoque">Estoque</ion-select-option>
-                <ion-select-option value="culinaria">Culinária</ion-select-option>
-                <ion-select-option value="empacotador">Empacotador</ion-select-option>
-                <ion-select-option value="especiais">Datas Especiais</ion-select-option>
-                <ion-select-option value="organizador">Organizador</ion-select-option>
-                <ion-select-option value="garcom">Garçom</ion-select-option>
-                <ion-select-option value="motoboy">Motoboy</ion-select-option>
-              </ion-select>
-              <ion-input></ion-input>
+              <ion-label position="floating">Categoria:</ion-label>
+              <ion-input formControlName="categoria"></ion-input>
+              <ng-container *ngFor="let erro of mensagens.categoria">
+                <span class="msg-erro"
+                *ngIf="formCadastro.get('categoria').hasError(erro.tipo) && (formCadastro.get('categoria').dirty || formCadastro.get('categoria').touched)">
+                  {{erro.mensagem}}
+                </span>
+              </ng-container>
             </ion-item>
-
           </div>
 
-          <br>
+
 
           <div>
             <ion-item>
               <ion-label position="floating">Descrição da vaga:</ion-label>
-              <ion-input></ion-input>
+              <ion-input formControlName="descricao"></ion-input>
+              <ng-container *ngFor="let erro of mensagens.descricao">
+                <span class="msg-erro"
+                *ngIf="formCadastro.get('descricao').hasError(erro.tipo) && (formCadastro.get('descricao').dirty || formCadastro.get('descricao').touched)">
+                  {{erro.mensagem}}
+                </span>
+              </ng-container>
             </ion-item>
           </div>
 
@@ -46,27 +49,45 @@
           <div>
             <ion-item>
               <ion-label position="floating">Horário:</ion-label>
-              <ion-input></ion-input>
+              <ion-input formControlName="horario"></ion-input>
+              <ng-container *ngFor="let erro of mensagens.horario">
+                <span class="msg-erro"
+                *ngIf="formCadastro.get('horario').hasError(erro.tipo) && (formCadastro.get('horario').dirty || formCadastro.get('horario').touched)">
+                  {{erro.mensagem}}
+                </span>
+              </ng-container>
             </ion-item>
           </div>
 
           <div>
             <ion-item>
               <ion-label position="floating">Pagamento em R$:</ion-label>
-              <ion-input></ion-input>
+              <ion-input formControlName="pagamento"></ion-input>
+              <ng-container *ngFor="let erro of mensagens.pagamento">
+                <span class="msg-erro"
+                *ngIf="formCadastro.get('pagamento').hasError(erro.tipo) && (formCadastro.get('pagamento').dirty || formCadastro.get('pagamento').touched)">
+                  {{erro.mensagem}}
+                </span>
+              </ng-container>
             </ion-item>
           </div>
 
           <div>
             <ion-item>
               <ion-label position="floating">Quantidade de vagas:</ion-label>
-              <ion-input></ion-input>
+              <ion-input formControlName="qntd"></ion-input>
+              <ng-container *ngFor="let erro of mensagens.qntd">
+                <span class="msg-erro"
+                *ngIf="formCadastro.get('qntd').hasError(erro.tipo) && (formCadastro.get('qntd').dirty || formCadastro.get('qntd').touched)">
+                  {{erro.mensagem}}
+                </span>
+              </ng-container>
             </ion-item>
           </div>
 
 
           <div>
-            <ion-button size="large">Enviar</ion-button>
+            <ion-button size="large" (click)="salvarCadastroVagas()">Enviar</ion-button>
           </div>
         </form>
       </div>
