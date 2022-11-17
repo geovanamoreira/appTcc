@@ -1,5 +1,6 @@
-export class IVaga{
+export class IVaga {
   id: number;
+  idCurtida?: number;
   descricao: string;
   qntd: number;
   horario: string;

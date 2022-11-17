@@ -6,6 +6,7 @@ import { InterfaceEmpregadoService } from './../services/interface-empregado.ser
 import { Component, OnInit } from '@angular/core';
 import { Empregado } from '../models/perfil-empregado.model';
 import { IVaga } from '../models/cadastro-vagas.model';
+import { VagaService } from '../services/vaga.service';
 
 @Component({
   selector: 'app-interface-empregado',
@@ -18,10 +19,10 @@ export class InterfaceEmpregadoPage implements OnInit {
   listaVagas: IVaga[] = [];
   empregado: Empregado = new Empregado();
 
-  constructor(private interfaceEmpregadoService: InterfaceEmpregadoService, private activateRoute: ActivatedRoute, private storageService: StorageService) { }
+  constructor(private interfaceEmpregadoService: InterfaceEmpregadoService, private activateRoute: ActivatedRoute, private vagaService: VagaService, private storageService: StorageService) { }
 
     async buscarVagas(){
-      this.listaVagas = await this.storageService.getAll();
+      this.listaVagas = await this.vagaService.buscarTodas();
     }
 
   ngOnInit(): void {
@@ -38,6 +39,13 @@ export class InterfaceEmpregadoPage implements OnInit {
       this.empregado = retorno;
     });
 
+  }
+
+  async curtir(vaga: IVaga){
+    const id = await this.vagaService.getIDCurtir();
+      vaga.idCurtida = id;
+      await this.vagaService.curtirVaga(vaga);
+      this.storageService.set('idCurtir', id);
   }
 
 }
