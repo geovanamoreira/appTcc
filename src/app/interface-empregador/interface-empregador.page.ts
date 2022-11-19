@@ -1,10 +1,10 @@
+import { StorageService } from './../services/storage.service';
 /* eslint-disable no-trailing-spaces */
 import { IVaga } from './../models/cadastro-vagas.model';
 import { Empregador } from './../models/perfil-empregador.model';
 import { Component, OnInit } from '@angular/core';
 import { InterfaceEmpregadorService } from '../services/interface-empregador.service';
 import { ActivatedRoute } from '@angular/router';
-import { VagaService } from '../services/vaga.service';
 
 @Component({
   selector: 'app-interface-empregador',
@@ -18,11 +18,11 @@ export class InterfaceEmpregadorPage implements OnInit {
   constructor(
     private interfaceEmpregadorService: InterfaceEmpregadorService,
     private activateRoute: ActivatedRoute,
-    private vagaService: VagaService
+    private storageService: StorageService
   ) {}
 
   async buscarVagas() {
-    this.listaVagas = await this.vagaService.buscarTodas();
+    this.listaVagas = await this.storageService.getAll();
   }
 
   ngOnInit(): void {
@@ -41,4 +41,9 @@ export class InterfaceEmpregadorPage implements OnInit {
         this.empregador = retorno;
       });
   }
+
+    async excluirCadastro(categoria: string){
+      this.storageService.remove(categoria);
+      this.buscarVagas();
+    }
 }

@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/member-ordering */
 export class IVaga {
   id: number;
   descricao: string;
@@ -6,5 +5,6 @@ export class IVaga {
   horario: string;
   pagamento: string;
   categoria: string;
-  static id: any;
+  empregador: string;
+  endereco: string;
 }

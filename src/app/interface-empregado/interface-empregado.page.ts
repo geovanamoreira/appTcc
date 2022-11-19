@@ -4,7 +4,6 @@ import { InterfaceEmpregadoService } from './../services/interface-empregado.ser
 import { Component, OnInit } from '@angular/core';
 import { Empregado } from '../models/perfil-empregado.model';
 import { IVaga } from '../models/cadastro-vagas.model';
-import { VagaService } from '../services/vaga.service';
 
 @Component({
   selector: 'app-interface-empregado',
@@ -18,11 +17,11 @@ export class InterfaceEmpregadoPage implements OnInit {
   constructor(
     private interfaceEmpregadoService: InterfaceEmpregadoService,
     private activateRoute: ActivatedRoute,
-    private vagaService: VagaService,
+    private storageService: StorageService
   ) {}
 
   async buscarVagas() {
-    this.listaVagas = await this.vagaService.buscarTodas();
+    this.listaVagas = await this.storageService.getAll();
   }
 
   ngOnInit(): void {

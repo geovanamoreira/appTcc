@@ -47,10 +47,6 @@ const routes: Routes = [
     path: 'interface-empregador',
     loadChildren: () => import('./interface-empregador/interface-empregador.module').then( m => m.InterfaceEmpregadorPageModule)
   },
-  {
-    path: 'empregado-equipe',
-    loadChildren: () => import('./empregado-equipe/empregado-equipe.module').then( m => m.EmpregadoEquipePageModule)
-  },
 
   {
     path: 'empregador-vagas',
@@ -60,17 +56,6 @@ const routes: Routes = [
     path: 'equipe',
     loadChildren: () => import('./equipe/equipe.module').then( m => m.EquipePageModule)
   },
-  {
-    path: 'usuario-cadastro',
-    loadChildren: () => import('./usuario-cadastro/usuario-cadastro.module').then( m => m.UsuarioCadastroPageModule)
-  },
-  {
-    path: 'usuario-empregador',
-    loadChildren: () => import('./usuario-empregador/usuario-empregador.module').then( m => m.UsuarioEmpregadorPageModule)
-  },
-
-
-
 
 ];
 

@@ -37,7 +37,7 @@
       <br>
 
       <p class="ion-text-center">Entre em contato conosco!</p>
-      <p class="ion-text-center" href="mailto:geovana.oliveira47@etec.sp.gov.br">geovana.oliveira47@etec.sp.gov.br</p>
+      <p class="ion-text-center">geovana.oliveira47@etec.sp.gov.br</p>
 
     </ion-list>
   </ion-content>
@@ -76,7 +76,7 @@
         <br>
 
       <ion-list>
-        <ion-item-sliding *ngFor="let vaga of listaVagas">
+        <ion-item-sliding *ngFor="let vaga of listaVagas" class="cardvaga">
           <ion-item>
             <ion-label>
               <div>
@@ -84,18 +84,20 @@
                 <p>{{vaga.descricao}}</p>
                 <p>{{vaga.horario}}</p>
                 <p>{{vaga.pagamento}}</p>
+                <p>{{vaga.empregador}}</p>
+                <p>{{vaga.endereco}}</p>
                 <ion-badge slot="start">{{vaga.qntd}}</ion-badge>
               </div>
             </ion-label>
           </ion-item>
 
           <ion-item-options side="end">
-            <ion-item-option color="danger">
+            <ion-item-option color="danger" (click)="excluirCadastro(vaga.categoria)">
               <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
             </ion-item-option>
           </ion-item-options>
-
           </ion-item-sliding>
+          <br>
       </ion-list>
 
       </div>

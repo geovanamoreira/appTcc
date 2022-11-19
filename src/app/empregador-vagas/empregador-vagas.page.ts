@@ -3,7 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { StorageService } from '../services/storage.service';
 import { Router } from '@angular/router';
-import { VagaService } from '../services/vaga.service';
 
 @Component({
   selector: 'app-empregador-vagas',
@@ -19,7 +18,7 @@ export class EmpregadorVagasPage implements OnInit {
       { tipo: 'required', mensagem: 'O campo Categoria é obrigatório.' },
       {
         tipo: 'minlength',
-        mensagem: 'O nome deve ter pelo menos 4 caracteres.',
+        mensagem: 'A categoria deve ter pelo menos 4 caracteres.',
       },
     ],
 
@@ -27,7 +26,7 @@ export class EmpregadorVagasPage implements OnInit {
       { tipo: 'required', mensagem: 'O campo Descricao é obrigatório.' },
       {
         tipo: 'minlength',
-        mensagem: 'O nome deve ter pelo menos 6 caracteres.',
+        mensagem: 'A descrição deve ter pelo menos 6 caracteres.',
       },
     ],
 
@@ -67,13 +66,27 @@ export class EmpregadorVagasPage implements OnInit {
         mensagem: 'O telefone deve ter no máximo 5 caractéres.',
       },
     ],
+    empregador: [
+      { tipo: 'required', mensagem: 'Seu nome é obrigatório.' },
+      {
+        tipo: 'minlength',
+        mensagem: 'O nome deve ter pelo menos 4 caracteres.',
+      },
+    ],
+
+    endereco: [
+      { tipo: 'required', mensagem: 'O Endereço é obrigatório.' },
+      {
+        tipo: 'minlength',
+        mensagem: 'O endereço deve ter pelo menos 4 caracteres.',
+      },
+    ]
   };
 
   constructor(
     private formBuilder: FormBuilder,
     private storageService: StorageService,
     private route: Router,
-    private vagaService: VagaService,
   ) {
     this.formCadastro = this.formBuilder.group({
       categoria: [
@@ -100,6 +113,15 @@ export class EmpregadorVagasPage implements OnInit {
           Validators.maxLength(5),
         ]),
       ],
+      empregador: [
+        '',
+        Validators.compose([Validators.required, Validators.minLength(4)]),
+      ],
+
+     endereco: [
+        '',
+        Validators.compose([Validators.required, Validators.minLength(4)]),
+      ],
     });
   }
 
@@ -112,10 +134,9 @@ export class EmpregadorVagasPage implements OnInit {
       this.vaga.descricao = this.formCadastro.value.descricao;
       this.vaga.horario = this.formCadastro.value.horario;
       this.vaga.pagamento = this.formCadastro.value.pagamento;
-      const id = await this.vagaService.getIDVaga();
-      this.vaga.id = id;
-      await this.vagaService.salvar(this.vaga);
-      this.storageService.set('vagas', id);
+      this.vaga.empregador = this.formCadastro.value.empregador;
+      this.vaga.endereco = this.formCadastro.value.endereco;
+      await this.storageService.set(this.vaga.categoria, this.vaga);
       this.route.navigateByUrl('/interface-empregador');
     } else {
       alert('Formulário Inválido!');

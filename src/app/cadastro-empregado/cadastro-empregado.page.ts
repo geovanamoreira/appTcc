@@ -146,7 +146,6 @@ export class CadastroEmpregadoPage implements OnInit {
       this.empregado.cvPix = this.formCadastro.value.cvPix;
       this.empregado.experiencias = this.formCadastro.value.experiencias;
       await this.storageService.set(this.empregado.email, this.empregado);
-      this.route.navigateByUrl('/usuario-cadastro');
     } else {
       alert('Formulário Inválido!');
     }

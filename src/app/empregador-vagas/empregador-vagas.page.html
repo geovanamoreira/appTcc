@@ -85,6 +85,31 @@
             </ion-item>
           </div>
 
+          <div>
+            <ion-item>
+              <ion-label position="floating">Empregador</ion-label>
+              <ion-input formControlName="empregador"></ion-input>
+              <ng-container *ngFor="let erro of mensagens.empregador">
+                <span class="msg-erro"
+                *ngIf="formCadastro.get('empregador').hasError(erro.tipo) && (formCadastro.get('empregador').dirty || formCadastro.get('empregador').touched)">
+                  {{erro.mensagem}}
+                </span>
+              </ng-container>
+            </ion-item>
+          </div>
+
+          <div>
+            <ion-item>
+              <ion-label position="floating">Endereço</ion-label>
+              <ion-input formControlName="endereco"></ion-input>
+              <ng-container *ngFor="let erro of mensagens.empregador">
+                <span class="msg-erro"
+                *ngIf="formCadastro.get('endereco').hasError(erro.tipo) && (formCadastro.get('endereco').dirty || formCadastro.get('endereco').touched)">
+                  {{erro.mensagem}}
+                </span>
+              </ng-container>
+            </ion-item>
+          </div>
 
           <div>
             <ion-button size="large" (click)="salvarCadastroVagas()">Enviar</ion-button>
