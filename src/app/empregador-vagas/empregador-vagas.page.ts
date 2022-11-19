@@ -115,7 +115,7 @@ export class EmpregadorVagasPage implements OnInit {
       const id = await this.vagaService.getIDVaga();
       this.vaga.id = id;
       await this.vagaService.salvar(this.vaga);
-      this.storageService.set('idVaga', id);
+      this.storageService.set('vagas', id);
       this.route.navigateByUrl('/interface-empregador');
     } else {
       alert('Formulário Inválido!');

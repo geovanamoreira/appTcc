@@ -7,7 +7,6 @@ import { IVaga } from '../models/cadastro-vagas.model';
 })
 export class VagaService {
   listaVagas: IVaga[] = [];
-  listaVagasCurtidas: IVaga[] = [];
 
   constructor(private storageService: StorageService) {}
 
@@ -30,7 +29,7 @@ export class VagaService {
   }
 
   async getIDVaga() {
-    const id = await this.storageService.get('idVaga');
+    const id = await this.storageService.get('vagas');
     if (id) {
       return id + 1;
     } else {
@@ -39,23 +38,4 @@ export class VagaService {
     }
   }
 
-  async getIDCurtir() {
-    const id = await this.storageService.get('idCurtir');
-    if (id) {
-      return id + 1;
-    } else {
-      this.storageService.set('idCurtir', 0);
-      return 0;
-    }
-  }
-
-  async curtirVaga(vaga: IVaga){
-    this.listaVagasCurtidas[vaga.id] = vaga;
-    this.storageService.set('vagasCurtidas', this.listaVagasCurtidas);
-  }
-
-  async buscarTodasCurtidas() {
-    this.listaVagasCurtidas = this.storageService.get('vagasCurtidas') as unknown as IVaga[];
-    return this.listaVagasCurtidas;
-  }
 }

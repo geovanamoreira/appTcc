@@ -1,4 +1,4 @@
-import { StorageService } from './../services/storage.service';
+/* eslint-disable no-trailing-spaces */
 import { IVaga } from './../models/cadastro-vagas.model';
 import { Empregador } from './../models/perfil-empregador.model';
 import { Component, OnInit } from '@angular/core';
@@ -15,7 +15,6 @@ export class InterfaceEmpregadorPage implements OnInit {
   listaVagas: IVaga[] = [];
   empregador: Empregador = new Empregador();
 
-  // eslint-disable-next-line max-len
   constructor(
     private interfaceEmpregadorService: InterfaceEmpregadorService,
     private activateRoute: ActivatedRoute,
@@ -34,14 +33,10 @@ export class InterfaceEmpregadorPage implements OnInit {
     this.buscarVagas();
   }
 
-  async excluirCadastroVagas(categoria: string) {
-    this.buscarVagas();
-  }
-
   async exibirEmpregador() {
     const id = Number(this.activateRoute.snapshot.paramMap.get('id'));
     await this.interfaceEmpregadorService
-      .buscarEmpregadoPeloId(1)
+      .buscarEmpregadorPeloId(1)
       .subscribe((retorno) => {
         this.empregador = retorno;
       });

@@ -20,7 +20,7 @@ export class InterfaceEmpregadorService {
     );
   }
 
-  buscarEmpregadoPeloId(id: number): Observable<Empregador> {
+  buscarEmpregadorPeloId(id: number): Observable<Empregador> {
     return this.http.get<Empregador>(`${this.url}/1`).pipe(
       (retorno => retorno)
     );

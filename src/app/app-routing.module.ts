@@ -48,10 +48,6 @@ const routes: Routes = [
     loadChildren: () => import('./interface-empregador/interface-empregador.module').then( m => m.InterfaceEmpregadorPageModule)
   },
   {
-    path: 'empregado-vagas',
-    loadChildren: () => import('./empregado-vagas/empregado-vagas.module').then( m => m.EmpregadoVagasPageModule)
-  },
-  {
     path: 'empregado-equipe',
     loadChildren: () => import('./empregado-equipe/empregado-equipe.module').then( m => m.EmpregadoEquipePageModule)
   },

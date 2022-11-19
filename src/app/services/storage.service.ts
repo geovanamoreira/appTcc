@@ -34,7 +34,7 @@ export class StorageService {
 
   public getAll(){
     const lista = [];
-    this._storage.forEach((value, key, index) => {
+    this._storage.forEach((value) => {
       lista.push(value);
     });
     return lista;
