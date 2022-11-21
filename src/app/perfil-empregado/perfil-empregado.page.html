@@ -43,11 +43,11 @@
       <div>
         <h2>Contato</h2>
         <ul>
-            <li><img src="../assets/icone-email.png" width= "15px" height="15px" alt="Icone Email"/> <a href="{{empregado.email}}">{{empregado.email}}</a></li>
+            <li><img src="../assets/icone-email.png" width= "15px" height="15px" alt="Icone Email"/>{{empregado.email}}</li>
             <br>
             <li><img src="../assets/fone-icone.png"  width="15px" height="15px" alt="Icone Telefone">{{empregado.telefone}}</li>
             <br>
-            <li><img src="../assets/icone-cidade.png"  width="15px" height="15px" alt="Icone Cidade">{{empregado.cidade?.nome}}</li>
+            <li><img src="../assets/icone-cidade.png"  width="15px" height="15px" alt="Icone Cidade">{{empregado.cidade?.nome}} - {{empregado.cidade?.estado?.sigla}}</li>
         </ul>
        </div>
     </div>

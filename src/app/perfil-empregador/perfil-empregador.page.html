@@ -25,7 +25,7 @@
     <div class="card">
       <h2>Descrição</h2>
          <div class="dadostabela">
-          <p class="ion-text-center">Profissional procurando por trabalhadores na empresa XXXX.</p>
+          <p class="ion-text-center">Profissional procurando por trabalhadores na empresa {{empregador.empresa?.nome}}.</p>
          </div>
     </div>
 
@@ -33,9 +33,7 @@
     <div class="card">
         <h2>CNPJ</h2>
           <div>
-            <ul>
-              <li>{{empregador.cnpj}}</li>
-            </ul>
+              <p class="ion-text-center">{{empregador.cnpj}}</p>
           </div>
     </div>
 
@@ -44,8 +42,10 @@
         <div>
           <ul>
             <li>{{empregador.empresa?.nome}}</li>
+            <br>
             <li><img src="../assets/icone-cidade.png"  width="15px" height="15px" alt="Icone Cidade">{{empregador.empresa?.endereco}}</li>
-            <li><ion-icon name="globe-outline"></ion-icon>{{empregador.empresa?.email}}</li>
+            <br>
+            <li><ion-icon name="mail-outline"></ion-icon>{{empregador.empresa?.email}}</li>
           </ul>
         </div>
   </div>
@@ -55,9 +55,11 @@
       <div>
         <h2>Contato</h2>
         <ul>
+            <li><ion-icon name="mail-outline"></ion-icon>{{empregador.empresa?.email}}</li>
+            <br>
             <li><img src="../assets/fone-icone.png"  width="15px" height="15px" alt="Icone Telefone">{{empregador.telefone}}</li>
             <br>
-            <li><img src="../assets/icone-cidade.png"  width="15px" height="15px" alt="Icone Cidade">{{empregador.cidade?.nome}}</li>
+            <li><img src="../assets/icone-cidade.png"  width="15px" height="15px" alt="Icone Cidade">{{empregador.cidade?.nome}} - {{empregador.cidade?.estado?.sigla}}</li>
         </ul>
        </div>
     </div>

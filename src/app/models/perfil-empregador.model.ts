@@ -11,6 +11,12 @@ export class Empregador{
 export class Cidade{
   id: number;
   nome: string;
+  estado: Estado;
+}
+
+export class Estado{
+  id: number;
+  sigla: string;
 }
 
 export class Empresa{
