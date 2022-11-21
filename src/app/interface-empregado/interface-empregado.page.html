@@ -59,6 +59,19 @@
 
     <br>
 
+    <div class="card">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="2">
+            <img src="../assets/notes.png" alt="" class="note">
+          </ion-col>
+          <ion-col size="8" class="dispo ion-text-center">Vagas Disponibilizadas</ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+
+    <br>
+
     <ion-list>
       <ion-item-sliding *ngFor="let vaga of listaVagas" routerLink="/perfil-empregador" class="cardvaga">
         <ion-item>
