@@ -8,6 +8,7 @@ export class Empregado{
   telefone: string;
   experiencias: string;
   disponibilidade: string;
+  cv_pix: string;
   cidade: Cidade;
 }
 

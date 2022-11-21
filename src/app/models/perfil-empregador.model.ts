@@ -1,9 +1,11 @@
+/* eslint-disable @typescript-eslint/naming-convention */
 export class Empregador{
   id: number;
   nome: string;
   cnpj: string;
   email: string;
   telefone: string;
+  cv_pix: string;
   cidade: Cidade;
   empresa: Empresa;
 }
