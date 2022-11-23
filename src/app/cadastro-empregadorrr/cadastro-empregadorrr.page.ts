@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import { comparaValidator } from './../validators/compara-validator';
 import { CpfValidator } from './../validators/cpf-validator';
 import { Component, OnInit } from '@angular/core';
@@ -5,6 +6,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { IEmpregador } from '../models/cadastro-empregador.model';
 import { Router } from '@angular/router';
 import { StorageService } from '../services/storage.service';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-cadastro-empregadorrr',
@@ -53,7 +55,7 @@ export class CadastroEmpregadorrrPage implements OnInit {
     ],
   };
 
-  constructor(private formBuilder: FormBuilder, private storageService: StorageService, private route: Router) {
+  constructor(private formBuilder: FormBuilder, private storageService: StorageService, private route: Router, private alertController: AlertController) {
     this.formCadastro = this.formBuilder.group({
       nome: ['', Validators.compose([Validators.required, Validators.minLength(3)])],
       cpf: ['', Validators.compose([Validators.required, CpfValidator.cpfValido])],
@@ -85,6 +87,16 @@ export class CadastroEmpregadorrrPage implements OnInit {
     else{
       alert('Formulário Inválido!');
     }
+  }
+
+  async presentAlert() {
+    const alert = await this.alertController.create({
+      header: 'Cadastro confirmado!',
+      subHeader: 'Retorne à pagina de login.',
+      buttons: ['OK'],
+    });
+
+    await alert.present();
   }
 
 }

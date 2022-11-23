@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { StorageService } from '../services/storage.service';
 import { Router } from '@angular/router';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-cadastro-empregado',
@@ -82,7 +83,8 @@ export class CadastroEmpregadoPage implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private storageService: StorageService,
-    private route: Router
+    private route: Router,
+    private alertController: AlertController
   ) {
     this.formCadastro = this.formBuilder.group(
       {
@@ -149,5 +151,15 @@ export class CadastroEmpregadoPage implements OnInit {
     } else {
       alert('Formulário Inválido!');
     }
+  }
+
+  async presentAlert() {
+    const alert = await this.alertController.create({
+      header: 'Cadastro confirmado!',
+      subHeader: 'Retorne à pagina de login.',
+      buttons: ['OK'],
+    });
+
+    await alert.present();
   }
 }
