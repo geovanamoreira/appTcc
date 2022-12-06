@@ -32,7 +32,7 @@ export class StorageService {
     this._storage?.remove(key);
   }
 
-  public getAll(){
+  public async getAll(){
     const lista = [];
     this._storage.forEach((value) => {
       lista.push(value);

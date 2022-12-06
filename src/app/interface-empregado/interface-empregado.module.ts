@@ -6,6 +6,8 @@ import { IonicModule } from '@ionic/angular';
 
 import { InterfaceEmpregadoPageRoutingModule } from './interface-empregado-routing.module';
 
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
 import { InterfaceEmpregadoPage } from './interface-empregado.page';
 
 @NgModule({
@@ -13,7 +15,8 @@ import { InterfaceEmpregadoPage } from './interface-empregado.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    InterfaceEmpregadoPageRoutingModule
+    InterfaceEmpregadoPageRoutingModule,
+    Ng2SearchPipeModule
   ],
   declarations: [InterfaceEmpregadoPage]
 })

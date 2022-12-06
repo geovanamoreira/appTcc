@@ -12,7 +12,10 @@ import { IVaga } from '../models/cadastro-vagas.model';
 })
 export class InterfaceEmpregadoPage implements OnInit {
   listaVagas: IVaga[] = [];
+  placeholderVagas: IVaga[] = [];
   empregado: Empregado = new Empregado();
+  searchTerm: string;
+  categoria = [];
 
   constructor(
     private interfaceEmpregadoService: InterfaceEmpregadoService,
@@ -22,6 +25,35 @@ export class InterfaceEmpregadoPage implements OnInit {
 
   async buscarVagas() {
     this.listaVagas = await this.storageService.getAll();
+    console.log('limpa');
+  }
+
+  getListaIndex(data) {
+    let index = 0;
+    this.listaVagas.forEach((struct) => {
+      index += 1;
+      if (struct.categoria === data.categoria) {
+        return index;
+      }
+    });
+    return index;
+  }
+
+  async buscarPorCategoria(event) {
+    const keyword = event.target.value.toLowerCase();
+    if (keyword.length <= 2) {
+      this.buscarVagas();
+    }
+    const data = await this.storageService.getAll();
+    console.log(this.listaVagas);
+    this.listaVagas.forEach((dataRes) => {
+      const searchResult: number | boolean = dataRes.categoria.toLowerCase().indexOf(keyword);
+      if (searchResult <= -1) {
+        const index = this.getListaIndex(dataRes);
+        console.log(index);
+        this.listaVagas.splice(index-1, 1);
+      }
+    });
   }
 
   ngOnInit(): void {

@@ -54,7 +54,7 @@
   <ion-content>
 
     <div>
-      <ion-searchbar></ion-searchbar>
+      <ion-searchbar (ionChange)="buscarPorCategoria($event)" (ionClear)="buscarVagas()" (ionCancel)="buscarVagas()"></ion-searchbar>
     </div>
 
     <br>
